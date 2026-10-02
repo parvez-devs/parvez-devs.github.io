@@ -3,521 +3,610 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="theme-color" content="#06101b" />
-  <meta name="description" content="Muhammad Parvez — Web Developer building responsive websites, frontend experiences, Telegram automations and Supabase-powered web applications." />
+  <meta name="theme-color" content="#29451f" />
+  <meta name="description" content="Muhammad Parvez — Web Developer. Responsive websites, frontend fixes, Telegram automation and Supabase integrations presented in a premium game-board portfolio." />
   <meta name="robots" content="index,follow" />
   <link rel="canonical" href="https://xionhub.me/" />
-  <meta property="og:title" content="Parvez Devs — Web Developer" />
-  <meta property="og:description" content="Responsive websites, frontend engineering, Telegram automations and Supabase integrations." />
+  <meta property="og:title" content="Parvez Devs — Gameboard Developer Portfolio" />
+  <meta property="og:description" content="Web development, frontend engineering, Telegram automation and Supabase integrations." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://xionhub.me/" />
   <meta property="og:image" content="https://avatars.githubusercontent.com/u/327871675?v=4" />
   <meta name="twitter:card" content="summary_large_image" />
-  <title>Parvez Devs — Web Developer</title>
+  <title>Parvez Devs — Gameboard Portfolio</title>
+
   <style>
     :root{
-      --bg:#06101b;
-      --bg-soft:#0a1624;
-      --surface:rgba(255,255,255,.045);
-      --surface-strong:rgba(255,255,255,.065);
-      --line:rgba(255,255,255,.10);
-      --line-strong:rgba(255,255,255,.16);
-      --text:#f5f8fc;
-      --muted:#9dafc3;
-      --green:#64e6a5;
-      --blue:#74a9ff;
-      --cyan:#64d8e8;
-      --danger:#ff8585;
-      --shadow:0 30px 90px rgba(0,0,0,.34);
-      --radius:26px;
+      --sky-a:#82c8ff;
+      --sky-b:#eaf8ff;
+      --grass:#79cd57;
+      --grass-2:#55a842;
+      --grass-deep:#294b25;
+      --soil:#6c4a29;
+      --soil-2:#4b301a;
+      --wood:#946137;
+      --wood-light:#bd814a;
+      --wood-dark:#684220;
+      --paper:#f8f1dd;
+      --paper-2:#eddfbd;
+      --paper-3:#fff9e9;
+      --ink:#2f281d;
+      --muted:#6a614e;
+      --gold:#f7c950;
+      --blue:#57adf3;
+      --green:#6bc955;
+      --line:#c9aa73;
+      --shadow:0 20px 50px rgba(35,28,16,.22);
+      --soft-shadow:0 10px 24px rgba(35,28,16,.16);
+      --radius:28px;
       --max:1180px;
     }
+
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
     body{
       margin:0;
-      color:var(--text);
       font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      color:var(--ink);
       background:
-        radial-gradient(900px 480px at 10% -10%,rgba(116,169,255,.18),transparent 62%),
-        radial-gradient(760px 420px at 100% 0%,rgba(100,230,165,.13),transparent 58%),
-        linear-gradient(180deg,#06101b 0%,#071421 48%,#06101b 100%);
-      line-height:1.65;
+        linear-gradient(180deg,var(--sky-b) 0 240px,#7ecb5e 240px 300px,var(--grass-deep) 300px 100%);
       overflow-x:hidden;
     }
-    body:before{
-      content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;opacity:.28;
-      background-image:
-        linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),
-        linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);
-      background-size:34px 34px;
-      mask-image:linear-gradient(to bottom,black,transparent 84%);
-    }
-    ::selection{background:rgba(100,230,165,.28);color:#fff}
     a{color:inherit;text-decoration:none}
     img{max-width:100%;display:block}
     button{font:inherit}
-    .container{width:min(var(--max),calc(100% - 40px));margin:auto}
-    .progress{position:fixed;left:0;top:0;height:2px;width:0;background:linear-gradient(90deg,var(--green),var(--blue));z-index:100}
+    ::selection{background:#c7ef9a;color:#20331a}
+    .container{width:min(var(--max),calc(100% - 34px));margin:auto}
+    .progress{
+      position:fixed;z-index:120;top:0;left:0;height:4px;width:0;
+      background:linear-gradient(90deg,#79d45c,#f7d360,#59aff6);
+      box-shadow:0 2px 10px rgba(0,0,0,.12)
+    }
+
+    .sky-decor{position:fixed;inset:0 0 auto;height:250px;pointer-events:none;z-index:-2;overflow:hidden}
+    .sun{
+      position:absolute;right:8%;top:35px;width:82px;height:82px;border-radius:50%;
+      background:radial-gradient(circle,#fff5ac 0 34%,#ffd95c 35% 72%,rgba(255,217,92,.12) 73%);
+      box-shadow:0 0 50px rgba(255,214,75,.42)
+    }
+    .cloud{position:absolute;width:118px;height:36px;border-radius:999px;background:rgba(255,255,255,.9)}
+    .cloud:before,.cloud:after{content:"";position:absolute;border-radius:50%;background:inherit}
+    .cloud:before{width:52px;height:52px;left:14px;top:-19px}
+    .cloud:after{width:66px;height:66px;left:48px;top:-31px}
+    .cloud.c1{left:8%;top:52px}
+    .cloud.c2{right:22%;top:108px;transform:scale(.78)}
+    .cloud.c3{left:43%;top:26px;transform:scale(.58)}
+
+    .nav-wrap{position:sticky;top:0;z-index:100;padding:10px 0 0}
     .nav{
-      position:sticky;top:0;z-index:80;
-      backdrop-filter:blur(20px) saturate(140%);
-      background:rgba(6,16,27,.72);
-      border-bottom:1px solid rgba(255,255,255,.07)
-    }
-    .nav-inner{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:22px}
-    .brand{display:flex;align-items:center;gap:12px;font-weight:900;letter-spacing:-.2px}
-    .brand-mark{
-      position:relative;width:38px;height:38px;border-radius:12px;display:grid;place-items:center;
-      color:#041018;font-weight:950;background:linear-gradient(145deg,var(--green),var(--blue));
-      box-shadow:0 10px 28px rgba(100,230,165,.15)
-    }
-    .brand-mark:after{content:"";position:absolute;inset:1px;border-radius:11px;border:1px solid rgba(255,255,255,.28)}
-    .brand-name span{color:var(--green)}
-    .nav-links{display:flex;align-items:center;gap:24px;color:var(--muted);font-size:14px}
-    .nav-links a{transition:.2s ease}
-    .nav-links a:hover{color:#fff}
-    .nav-cta{
-      color:#dff9ed!important;padding:10px 14px;border-radius:12px;
-      border:1px solid rgba(100,230,165,.22);background:rgba(100,230,165,.07)
-    }
-
-    .hero{padding:92px 0 54px;position:relative}
-    .hero-grid{display:grid;grid-template-columns:1.18fr .82fr;gap:54px;align-items:center}
-    .eyebrow{
-      display:inline-flex;align-items:center;gap:10px;padding:8px 12px;border-radius:999px;
-      color:#d7f9e8;background:rgba(100,230,165,.06);border:1px solid rgba(100,230,165,.20);
-      font-weight:800;font-size:13px
-    }
-    .dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 0 6px rgba(100,230,165,.10)}
-    h1{
-      margin:24px 0 22px;font-size:clamp(50px,7.2vw,86px);line-height:.98;
-      letter-spacing:-4px;max-width:900px
-    }
-    .gradient{
-      background:linear-gradient(90deg,var(--green) 0%,var(--cyan) 45%,var(--blue) 100%);
-      -webkit-background-clip:text;background-clip:text;color:transparent
-    }
-    .lead{max-width:760px;color:var(--muted);font-size:18px;line-height:1.75}
-    .hero-points{display:flex;flex-wrap:wrap;gap:10px;margin-top:23px}
-    .pill{
-      display:inline-flex;align-items:center;gap:8px;padding:8px 11px;border-radius:999px;
-      border:1px solid var(--line);background:rgba(255,255,255,.025);font-size:12px;color:#c8d5e5
-    }
-    .pill i{width:7px;height:7px;border-radius:50%;background:var(--blue);display:inline-block}
-    .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
-    .btn{
-      min-height:50px;display:inline-flex;align-items:center;justify-content:center;gap:9px;
-      padding:0 18px;border-radius:14px;border:1px solid var(--line);
-      font-weight:850;transition:.22s ease;position:relative;overflow:hidden
-    }
-    .btn:before{
-      content:"";position:absolute;inset:0;transform:translateX(-110%);
-      background:linear-gradient(100deg,transparent,rgba(255,255,255,.10),transparent);transition:.45s ease
-    }
-    .btn:hover:before{transform:translateX(110%)}
-    .btn:hover{transform:translateY(-2px);border-color:var(--line-strong)}
-    .btn.primary{border:0;color:#06101b;background:linear-gradient(135deg,var(--green),#43d78f);box-shadow:0 14px 36px rgba(100,230,165,.15)}
-    .btn.secondary{background:rgba(255,255,255,.035)}
-    .arrow{font-size:18px}
-
-    .profile-wrap{position:relative}
-    .glow{
-      position:absolute;width:300px;height:300px;border-radius:50%;right:-80px;top:-80px;
-      background:radial-gradient(circle,rgba(116,169,255,.22),transparent 65%);filter:blur(8px);pointer-events:none
-    }
-    .profile-card{
-      position:relative;overflow:hidden;padding:28px;border-radius:30px;
-      border:1px solid rgba(255,255,255,.10);
-      background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.03));
-      box-shadow:var(--shadow);backdrop-filter:blur(18px)
-    }
-    .profile-card:after{
-      content:"";position:absolute;inset:0;pointer-events:none;
-      background:linear-gradient(135deg,rgba(255,255,255,.07),transparent 35%,transparent 70%,rgba(100,230,165,.04))
-    }
-    .profile-top{position:relative;z-index:2;display:flex;align-items:center;gap:17px}
-    .avatar{
-      width:86px;height:86px;border-radius:24px;object-fit:cover;
-      border:2px solid rgba(255,255,255,.16);box-shadow:0 18px 45px rgba(0,0,0,.36)
-    }
-    .profile-top h2{margin:0;font-size:25px;letter-spacing:-.7px}
-    .profile-top p{margin:3px 0 0;color:var(--muted);font-size:14px}
-    .availability{display:inline-flex;align-items:center;gap:7px;margin-top:7px;color:#c8f5df;font-size:12px}
-    .availability span{width:7px;height:7px;border-radius:50%;background:var(--green)}
-    .quick-stats{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-top:22px}
-    .stat{
-      padding:15px;border-radius:16px;background:rgba(6,16,27,.42);
-      border:1px solid rgba(255,255,255,.08)
-    }
-    .stat b{display:block;font-size:14px}.stat span{display:block;margin-top:2px;color:var(--muted);font-size:12px}
-    .social-row{position:relative;z-index:2;display:flex;gap:9px;flex-wrap:wrap;margin-top:18px}
-    .social{
-      padding:9px 11px;border-radius:11px;border:1px solid var(--line);
-      background:rgba(255,255,255,.025);font-size:12px;color:#d1ddeb
-    }
-
-    .stack-strip{padding:14px 0 4px}
-    .stack{
-      display:grid;grid-template-columns:auto 1fr;gap:26px;align-items:center;
-      padding:17px 18px;border:1px solid rgba(255,255,255,.07);border-radius:18px;background:rgba(255,255,255,.025)
-    }
-    .stack-label{font-size:11px;text-transform:uppercase;letter-spacing:1.7px;color:#7f93aa;font-weight:900}
-    .stack-items{display:flex;gap:20px;flex-wrap:wrap;color:#bdcadd;font-weight:800;font-size:13px}
-
-    section{padding:78px 0}
-    .section-head{display:flex;justify-content:space-between;gap:34px;align-items:end;margin-bottom:32px}
-    .mini-title{font-size:11px;text-transform:uppercase;letter-spacing:1.8px;color:#7f93aa;font-weight:900}
-    .section-head h2,.about-box h2{font-size:clamp(32px,5vw,44px);line-height:1.07;letter-spacing:-1.7px;margin:6px 0 0}
-    .section-head p{max-width:610px;color:var(--muted);margin:0}
-    .services{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .service-card{
-      min-height:255px;display:flex;flex-direction:column;justify-content:space-between;
-      padding:25px;border-radius:var(--radius);background:var(--surface);border:1px solid var(--line);
-      transition:.24s ease;position:relative;overflow:hidden
-    }
-    .service-card:before{
-      content:"";position:absolute;width:150px;height:150px;border-radius:50%;right:-60px;top:-60px;
-      background:rgba(116,169,255,.07);transition:.3s ease
-    }
-    .service-card:hover{transform:translateY(-5px);border-color:rgba(116,169,255,.22);background:var(--surface-strong)}
-    .service-card:hover:before{transform:scale(1.18)}
-    .icon{
-      width:48px;height:48px;border-radius:15px;display:grid;place-items:center;
-      background:linear-gradient(145deg,rgba(100,230,165,.15),rgba(116,169,255,.15));
-      border:1px solid rgba(255,255,255,.08);font-size:20px
-    }
-    .service-card h3{font-size:21px;margin:18px 0 8px;letter-spacing:-.4px}
-    .service-card p{margin:0;color:var(--muted);font-size:14px}
-    .service-foot{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:24px;padding-top:16px;border-top:1px solid rgba(255,255,255,.07);font-size:12px;color:#aebed0}
-    .service-foot b{color:#dbe6f3}
-
-    .projects{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-    .project{
-      border:1px solid var(--line);border-radius:28px;overflow:hidden;background:var(--surface);
-      transition:.25s ease
-    }
-    .project:hover{transform:translateY(-5px);box-shadow:var(--shadow);border-color:rgba(100,230,165,.18)}
-    .visual{
-      min-height:320px;position:relative;display:grid;place-items:center;overflow:hidden;
+      width:min(var(--max),calc(100% - 24px));margin:auto;
+      display:flex;align-items:center;justify-content:space-between;gap:18px;
+      padding:11px 14px;border-radius:22px;
+      color:#fff8e6;
       background:
-        radial-gradient(circle at 20% 20%,rgba(116,169,255,.24),transparent 28%),
-        radial-gradient(circle at 82% 76%,rgba(100,230,165,.15),transparent 28%),
-        #0a1a2a
+        linear-gradient(180deg,rgba(255,255,255,.12),transparent 20%),
+        linear-gradient(180deg,var(--wood-light),var(--wood));
+      border:3px solid var(--wood-dark);
+      box-shadow:var(--soft-shadow)
     }
-    .visual:before{
-      content:"";position:absolute;inset:0;
-      background-image:linear-gradient(rgba(255,255,255,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.022) 1px,transparent 1px);
-      background-size:28px 28px;mask-image:linear-gradient(to bottom,black,transparent)
+    .brand{display:flex;align-items:center;gap:11px;font-weight:950;letter-spacing:.1px}
+    .brand-mark{
+      width:42px;height:42px;border-radius:14px;display:grid;place-items:center;
+      background:linear-gradient(180deg,#a8e97a,#68bd4e);
+      color:#24441a;border:3px solid #427431;
+      box-shadow:inset 0 2px 0 rgba(255,255,255,.42)
     }
-    .device{
-      width:205px;padding:10px;border-radius:28px;background:#050d16;border:1px solid rgba(255,255,255,.13);
-      box-shadow:0 28px 70px rgba(0,0,0,.38);transform:rotate(-3deg);position:relative;z-index:2
+    .brand span{color:#fff1a2}
+    .nav-links{display:flex;align-items:center;gap:9px}
+    .nav-links a{
+      padding:10px 13px;border-radius:13px;font-size:13px;font-weight:850;
+      border:2px solid rgba(92,54,25,.28);background:rgba(255,255,255,.09)
     }
-    .device-screen{border-radius:19px;overflow:hidden;background:#102337}
-    .device-top{height:34px;border-bottom:1px solid rgba(255,255,255,.08);background:#07131f}
-    .board{
-      aspect-ratio:1/1;margin:13px;border-radius:13px;position:relative;overflow:hidden;
-      background:linear-gradient(90deg,rgba(100,230,165,.30) 0 50%,rgba(116,169,255,.30) 50% 100%)
+    .nav-links a:hover{background:rgba(255,255,255,.15)}
+    .nav-links .hire{
+      color:#5b3a0d;background:linear-gradient(180deg,#ffe58e,#f7c953);
+      border-color:#b98320;box-shadow:0 5px 0 rgba(91,58,13,.18)
     }
-    .board:before,.board:after{content:"";position:absolute;background:rgba(255,255,255,.13)}
-    .board:before{width:16%;height:100%;left:42%}.board:after{height:16%;width:100%;top:42%}
-    .device-foot{height:46px;margin:0 13px 13px;border-radius:10px;background:rgba(255,255,255,.055)}
-    .bot-panel{
-      width:min(410px,88%);position:relative;z-index:2;border-radius:21px;overflow:hidden;
-      background:#071520;border:1px solid rgba(255,255,255,.12);box-shadow:0 28px 70px rgba(0,0,0,.38)
-    }
-    .bot-head{padding:15px 17px;border-bottom:1px solid rgba(255,255,255,.08);font-weight:850}
-    .msg{margin:15px;padding:15px;border-radius:14px;background:#10283e;color:#dce8f6;font-size:13px}
-    .bot-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:0 15px 15px}
-    .action{padding:11px;border-radius:11px;text-align:center;font-size:12px;font-weight:850;border:1px solid rgba(255,255,255,.08)}
-    .action.ok{background:rgba(100,230,165,.11);color:#c9f7df}.action.no{background:rgba(255,133,133,.07);color:#ffc9c9}
-    .project-body{padding:25px}
-    .status{
-      display:inline-flex;padding:6px 10px;border-radius:999px;font-size:11px;font-weight:850;
-      color:#c9dcff;border:1px solid rgba(116,169,255,.20);background:rgba(116,169,255,.07)
-    }
-    .project h3{font-size:25px;letter-spacing:-.6px;margin:15px 0 8px}
-    .project p{color:var(--muted);font-size:14px}
-    .tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
-    .tag{font-size:11px;padding:6px 9px;border-radius:999px;border:1px solid var(--line);color:#cbd7e5;background:rgba(255,255,255,.02)}
-    .project-links{display:flex;gap:14px;flex-wrap:wrap;margin-top:20px;font-size:13px;font-weight:850}
-    .project-links a{color:#c9e2ff}
 
-    .about{display:grid;grid-template-columns:.9fr 1.1fr;gap:28px;align-items:start}
-    .about-box{
-      padding:30px;border-radius:28px;background:linear-gradient(145deg,rgba(100,230,165,.07),rgba(116,169,255,.05));
-      border:1px solid var(--line)
-    }
-    .about-box p{color:var(--muted)}
-    .skills{display:flex;gap:9px;flex-wrap:wrap;margin-top:20px}
-    .skill{padding:8px 11px;border-radius:11px;border:1px solid var(--line);background:rgba(255,255,255,.025);font-size:12px;color:#c8d5e5}
-    .process{display:grid;gap:12px}
-    .step{
-      display:grid;grid-template-columns:46px 1fr;gap:15px;padding:18px;border-radius:18px;
-      border:1px solid var(--line);background:rgba(255,255,255,.028)
-    }
-    .num{width:46px;height:46px;border-radius:13px;display:grid;place-items:center;background:#102337;color:var(--green);font-weight:950}
-    .step h4{margin:0 0 4px;font-size:16px}.step p{margin:0;color:var(--muted);font-size:13px}
-
-    .contact-shell{
-      position:relative;overflow:hidden;text-align:center;padding:54px 28px;border-radius:32px;
-      border:1px solid rgba(255,255,255,.11);background:
-        radial-gradient(circle at 50% -20%,rgba(100,230,165,.15),transparent 42%),
-        linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.025));
+    .hero{padding:54px 0 28px;position:relative}
+    .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:28px;align-items:center}
+    .panel{
+      border:4px solid #7c592f;border-radius:32px;
+      background:linear-gradient(180deg,var(--paper),var(--paper-2));
       box-shadow:var(--shadow)
     }
-    .contact-shell h2{font-size:clamp(36px,6vw,54px);line-height:1.02;letter-spacing:-2.2px;margin:8px auto 14px;max-width:780px}
-    .contact-shell p{max-width:680px;margin:0 auto;color:var(--muted)}
-    .contact-links{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:26px}
-    .contact-meta{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-top:16px;color:#94a7bd;font-size:12px}
-    .contact-meta a:hover{color:#fff}
-
-    footer{padding:34px 0 110px;color:#8194aa;font-size:12px}
-    .footer-inner{display:flex;justify-content:space-between;gap:20px;padding-top:24px;border-top:1px solid rgba(255,255,255,.07)}
-
-    .mobile-cta{
-      display:none;position:fixed;left:12px;right:12px;bottom:12px;z-index:70;
-      padding:10px;border-radius:17px;border:1px solid rgba(255,255,255,.11);
-      background:rgba(6,16,27,.78);backdrop-filter:blur(18px);box-shadow:0 18px 50px rgba(0,0,0,.34)
+    .hero-copy{
+      padding:29px;
+      background:
+        radial-gradient(circle at 94% 0%,rgba(255,255,255,.7),transparent 24%),
+        linear-gradient(180deg,#faf4e3,#efe1bf)
     }
-    .mobile-cta-inner{display:grid;grid-template-columns:1fr 1fr;gap:9px}
-    .mobile-cta a{min-height:46px;border-radius:12px;display:grid;place-items:center;font-size:13px;font-weight:850}
-    .mobile-cta .wa{background:linear-gradient(135deg,var(--green),#43d78f);color:#06101b}
-    .mobile-cta .tg{border:1px solid var(--line);background:rgba(255,255,255,.04)}
+    .ribbon{
+      display:inline-flex;align-items:center;gap:8px;padding:8px 13px;border-radius:999px;
+      color:white;font-size:12px;font-weight:900;letter-spacing:.2px;
+      background:linear-gradient(180deg,#73c2ff,#4c9dea);
+      border:2px solid #3472b8;box-shadow:0 5px 0 rgba(52,114,184,.24)
+    }
+    .ribbon-dot{width:8px;height:8px;border-radius:50%;background:#dff4ff}
+    h1{
+      margin:18px 0 16px;font-size:clamp(42px,7vw,76px);
+      line-height:.96;letter-spacing:-2.8px;color:#2d2418
+    }
+    .hero-emphasis{color:#347627}
+    .lead{font-size:17px;line-height:1.78;color:var(--muted);max-width:710px}
+    .hero-tags{display:flex;gap:9px;flex-wrap:wrap;margin-top:18px}
+    .hero-tag{
+      padding:8px 11px;border-radius:13px;background:#fff9e9;border:2px solid #dac59c;
+      color:#615744;font-size:12px;font-weight:850
+    }
+    .hero-actions{display:flex;gap:11px;flex-wrap:wrap;margin-top:24px}
+    .btn{
+      min-height:52px;padding:0 18px;border-radius:16px;
+      display:inline-flex;align-items:center;justify-content:center;gap:8px;
+      font-weight:950;border:3px solid transparent;box-shadow:0 7px 0 rgba(0,0,0,.10);
+      transition:transform .18s ease,filter .18s ease
+    }
+    .btn:hover{transform:translateY(-2px);filter:brightness(1.03)}
+    .btn-gold{background:linear-gradient(180deg,#ffe586,#f5c44f);color:#58390f;border-color:#bd8923}
+    .btn-green{background:linear-gradient(180deg,#92df71,#61b94e);color:#24431b;border-color:#3f7b32}
 
-    .reveal{opacity:0;transform:translateY(18px);transition:opacity .65s ease,transform .65s ease}
+    .gameboard{
+      padding:16px;border-radius:32px;
+      background:
+        linear-gradient(180deg,rgba(255,255,255,.16),transparent 14%),
+        linear-gradient(180deg,#7fd15e,#5da844);
+      border:4px solid #3f732e;box-shadow:var(--shadow)
+    }
+    .board-head{
+      display:flex;align-items:center;justify-content:space-between;gap:12px;
+      padding:10px 12px;margin-bottom:12px;color:#fff8e6;
+      background:linear-gradient(180deg,#9c6b3d,#744b28);
+      border:3px solid #5e3b1d;border-radius:18px;font-weight:950
+    }
+    .xp{
+      display:flex;align-items:center;gap:8px;font-size:12px
+    }
+    .xpbar{
+      width:96px;height:10px;border-radius:999px;background:#432b17;border:2px solid #321f11;overflow:hidden
+    }
+    .xpbar span{display:block;width:72%;height:100%;background:linear-gradient(90deg,#ffe25e,#ffbd3f)}
+    .board-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:11px}
+    .tile{
+      min-height:116px;padding:15px;border-radius:20px;
+      background:linear-gradient(180deg,#fff9e8,#efe1be);
+      border:3px solid #bd955e;
+      box-shadow:inset 0 3px 0 rgba(255,255,255,.55)
+    }
+    .tile-icon{
+      width:34px;height:34px;border-radius:11px;display:grid;place-items:center;
+      background:#d9efbf;border:2px solid #9bc978;margin-bottom:9px;font-size:17px
+    }
+    .tile b{display:block;font-size:14px}.tile span{display:block;margin-top:4px;font-size:11px;line-height:1.5;color:#655d49}
+    .profile-slot{
+      display:flex;align-items:center;gap:12px;margin-top:12px;padding:13px;
+      border-radius:20px;border:3px dashed rgba(51,91,36,.36);
+      background:rgba(255,255,255,.16);color:#fff8e9
+    }
+    .profile-slot img{width:70px;height:70px;border-radius:20px;object-fit:cover;border:3px solid rgba(78,49,20,.32)}
+    .profile-slot strong{display:block;font-size:17px}
+    .profile-slot small{display:block;margin-top:2px;color:#e6f1db}
+    .online{display:inline-flex;align-items:center;gap:6px;margin-top:5px;font-size:11px}
+    .online i{width:7px;height:7px;border-radius:50%;background:#baf27d;box-shadow:0 0 0 4px rgba(186,242,125,.15)}
+
+    .map-strip{padding:8px 0 0}
+    .map{
+      position:relative;overflow:hidden;display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:center;
+      padding:15px 17px;border-radius:20px;color:#f7f4df;
+      background:
+        linear-gradient(90deg,rgba(255,255,255,.04),transparent),
+        #385d2f;
+      border:3px solid #274621;box-shadow:var(--soft-shadow)
+    }
+    .map-label{font-size:11px;text-transform:uppercase;letter-spacing:1.5px;font-weight:950;color:#c7dfb6}
+    .map-items{display:flex;gap:14px;flex-wrap:wrap;font-size:12px;font-weight:850}
+    .map-items span{display:inline-flex;align-items:center;gap:6px}
+    .map-items i{width:8px;height:8px;border-radius:50%;background:#f4cc5b}
+
+    section{padding:36px 0 6px}
+    .section-head{display:flex;justify-content:space-between;align-items:end;gap:22px;margin-bottom:18px}
+    .wood-label{
+      display:inline-flex;padding:11px 17px;border-radius:16px;
+      color:#fff8e6;font-weight:950;
+      background:linear-gradient(180deg,var(--wood-light),var(--wood));
+      border:3px solid var(--wood-dark);box-shadow:0 7px 0 rgba(0,0,0,.10)
+    }
+    .section-head p{max-width:590px;margin:0;color:#e3eedc;font-size:14px;line-height:1.7}
+
+    .quest-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
+    .quest{
+      position:relative;overflow:hidden;padding:18px;border-radius:28px;
+      background:linear-gradient(180deg,#fbf5e4,#eddfbd);
+      border:4px solid #7c592f;box-shadow:var(--shadow);
+      transition:transform .2s ease
+    }
+    .quest:hover{transform:translateY(-4px)}
+    .quest:before{
+      content:"";position:absolute;right:-30px;top:-30px;width:110px;height:110px;border-radius:50%;
+      background:rgba(117,194,91,.10)
+    }
+    .quest-icon{
+      position:relative;width:52px;height:52px;border-radius:16px;display:grid;place-items:center;
+      font-size:21px;background:linear-gradient(180deg,#a2e57d,#68bd50);
+      border:3px solid #438034
+    }
+    .quest h3{margin:14px 0 8px;font-size:21px}
+    .quest p{margin:0;color:#625a48;font-size:14px;line-height:1.72}
+    .quest-foot{
+      display:flex;justify-content:space-between;gap:12px;align-items:center;
+      margin-top:18px;padding-top:14px;border-top:2px dashed #d8c39b;
+      color:#71664d;font-size:11px;font-weight:850
+    }
+    .reward{padding:6px 9px;border-radius:999px;background:#fff7d4;border:2px solid #e4c45d;color:#745712}
+
+    .project-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .project{
+      overflow:hidden;border-radius:30px;background:linear-gradient(180deg,#faf4e3,#eddfbd);
+      border:4px solid #7c592f;box-shadow:var(--shadow)
+    }
+    .scene{
+      position:relative;min-height:300px;overflow:hidden;border-bottom:4px solid #7c592f;
+      background:linear-gradient(180deg,#9bdcff 0 34%,#77c85c 34% 100%)
+    }
+    .scene .field{
+      position:absolute;left:-5%;right:-5%;bottom:-20px;height:130px;
+      transform:skewY(-4deg);
+      background:
+        repeating-linear-gradient(90deg,rgba(70,127,47,.20) 0 28px,rgba(108,179,75,.20) 28px 56px),
+        linear-gradient(180deg,#6bb34e,#4b8f38)
+    }
+    .barn{
+      position:absolute;right:30px;bottom:60px;width:112px;height:86px;
+      background:#c7654d;border:4px solid #7c392f;border-radius:9px 9px 5px 5px;z-index:1
+    }
+    .barn:before{
+      content:"";position:absolute;left:-11px;right:-11px;top:-36px;height:50px;
+      background:#6c3b2b;clip-path:polygon(50% 0,100% 100%,0 100%)
+    }
+    .barn:after{
+      content:"";position:absolute;left:37px;bottom:0;width:34px;height:48px;background:#55301f;border:3px solid #3c2216
+    }
+    .ludo{
+      position:absolute;z-index:3;left:30px;top:35px;width:190px;aspect-ratio:1;
+      border-radius:19px;overflow:hidden;background:#f8edd8;border:4px solid #694526;
+      box-shadow:0 15px 26px rgba(0,0,0,.20)
+    }
+    .ludo:before,.ludo:after{content:"";position:absolute;background:#c9ad82;z-index:4}
+    .ludo:before{left:41%;width:18%;height:100%}
+    .ludo:after{top:41%;height:18%;width:100%}
+    .q1,.q2,.q3,.q4{position:absolute;width:38%;height:38%}
+    .q1{left:0;top:0;background:#f15d53}.q2{right:0;top:0;background:#57aff5}.q3{left:0;bottom:0;background:#e9cf4d}.q4{right:0;bottom:0;background:#5dcc68}
+    .scene-card{
+      position:absolute;z-index:5;right:20px;top:22px;width:190px;padding:13px;
+      border-radius:18px;background:rgba(255,250,235,.95);border:3px solid #ba925c;
+      box-shadow:0 12px 22px rgba(0,0,0,.16)
+    }
+    .scene-card small{
+      display:inline-block;padding:5px 8px;border-radius:999px;background:#fff4bd;border:2px solid #e6c45c;
+      font-weight:950;color:#705511
+    }
+    .scene-card h4{margin:9px 0 5px;font-size:16px}.scene-card p{margin:0;font-size:11px;line-height:1.55;color:#685f4a}
+    .telegram{
+      position:absolute;z-index:4;left:24px;right:24px;top:37px;
+      border-radius:23px;overflow:hidden;background:#fffaf0;border:4px solid #6998cf;
+      box-shadow:0 15px 26px rgba(0,0,0,.18)
+    }
+    .telegram-head{padding:13px 15px;color:white;font-weight:950;background:linear-gradient(180deg,#76c5ff,#4b9bea)}
+    .telegram-msg{margin:14px;padding:13px;border-radius:15px;background:#e6f2ff;border:2px solid #c3dbf5;color:#47637d;font-size:12px;line-height:1.65}
+    .telegram-actions{display:grid;grid-template-columns:1fr 1fr;gap:9px;padding:0 14px 14px}
+    .tg-action{padding:10px;border-radius:13px;text-align:center;font-size:12px;font-weight:950}
+    .approve{background:#d7f4cb;border:2px solid #7fc56c;color:#316728}
+    .reject{background:#ffe1db;border:2px solid #e6a195;color:#8a4134}
+
+    .project-body{padding:20px}
+    .status{
+      display:inline-flex;padding:6px 10px;border-radius:999px;font-size:10px;font-weight:950;
+      color:#6b6147;background:#fff9e9;border:2px solid #d8c49a
+    }
+    .project h3{margin:11px 0 7px;font-size:25px}.project p{margin:0;color:#635a47;font-size:14px;line-height:1.75}
+    .tags{display:flex;gap:7px;flex-wrap:wrap;margin-top:14px}
+    .tag{padding:6px 9px;border-radius:999px;background:#fff9e9;border:2px solid #dac59b;font-size:10px;font-weight:850;color:#6c6249}
+    .project-link{display:inline-flex;margin-top:15px;font-size:13px;font-weight:950;color:#347128}
+
+    .info-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:18px}
+    .card{
+      padding:21px;border-radius:28px;background:linear-gradient(180deg,#faf4e3,#eddfbd);
+      border:4px solid #7c592f;box-shadow:var(--shadow)
+    }
+    .card h2{margin:10px 0 10px;font-size:33px;line-height:1.04}.card p{margin:0;color:#655d4a;line-height:1.8;font-size:14px}
+    .inventory{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
+    .item{padding:8px 10px;border-radius:12px;background:#fff9e9;border:2px solid #dac59b;color:#675d45;font-size:11px;font-weight:850}
+    .steps{display:grid;gap:10px;margin-top:15px}
+    .step{display:grid;grid-template-columns:46px 1fr;gap:12px;padding:13px;border-radius:17px;background:#fff9ea;border:3px solid #d8c49a}
+    .num{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(180deg,#98e174,#67b94e);border:3px solid #437a34;font-weight:950}
+    .step h4{margin:0 0 3px;font-size:15px}.step p{margin:0;font-size:12px;line-height:1.6}
+
+    .contact{
+      margin-top:28px;padding:28px;border-radius:32px;
+      background:
+        linear-gradient(180deg,#83d461 0 77px,#f7f0dc 77px 100%);
+      border:4px solid #417832;box-shadow:var(--shadow)
+    }
+    .contact h2{margin:0;color:#1e3d18;font-size:clamp(31px,5vw,46px);letter-spacing:-1.4px;line-height:1}
+    .contact p{margin:8px 0 0;color:#2e4d25}
+    .contact-links{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
+    .contact-links a{
+      padding:12px 15px;border-radius:15px;background:#fff9e9;border:3px solid #cda761;
+      color:#593a13;font-size:13px;font-weight:950;box-shadow:0 6px 0 rgba(0,0,0,.09);
+      transition:transform .18s ease
+    }
+    .contact-links a:hover{transform:translateY(-2px)}
+    .contact-meta{display:flex;gap:13px;flex-wrap:wrap;margin-top:17px;color:#635c4b;font-size:11px;font-weight:800}
+
+    footer{padding:25px 0 105px;color:#dae9d1;font-size:11px}
+    .footer-inner{display:flex;justify-content:space-between;gap:16px;padding-top:18px;border-top:2px dashed rgba(255,255,255,.18)}
+
+    .mobile-bar{
+      display:none;position:fixed;left:10px;right:10px;bottom:10px;z-index:110;
+      padding:8px;border-radius:19px;background:linear-gradient(180deg,#faf4e3,#eddfbd);
+      border:4px solid #7c592f;box-shadow:var(--shadow)
+    }
+    .mobile-bar-inner{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+    .mobile-bar a{min-height:45px;display:grid;place-items:center;border-radius:13px;font-weight:950;font-size:13px}
+    .mobile-wa{background:linear-gradient(180deg,#95e171,#65b94d);color:#1d3d16;border:3px solid #437a34}
+    .mobile-tg{background:linear-gradient(180deg,#7bc8ff,#519deb);color:white;border:3px solid #3775ba}
+
+    .reveal{opacity:0;transform:translateY(18px);transition:opacity .55s ease,transform .55s ease}
     .reveal.show{opacity:1;transform:none}
+    .float{animation:float 4.5s ease-in-out infinite}
+    @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
 
-    @media(max-width:900px){
-      .hero-grid,.about,.projects{grid-template-columns:1fr}
-      .services{grid-template-columns:1fr}
-      .nav-links a:not(.nav-cta){display:none}
-      .hero{padding-top:62px}
+    @media(max-width:930px){
+      .hero-grid,.quest-grid,.project-grid,.info-grid{grid-template-columns:1fr}
       .section-head{display:block}.section-head p{margin-top:12px}
-      .profile-wrap{max-width:650px}
-      .stack{grid-template-columns:1fr;gap:8px}
-      .visual{min-height:270px}
+      .gameboard{max-width:700px}
     }
-    @media(max-width:560px){
-      .container{width:min(var(--max),calc(100% - 28px))}
-      .nav-inner{min-height:68px}
-      .nav-cta{font-size:12px}
-      .hero{padding:52px 0 36px}
-      h1{font-size:49px;letter-spacing:-2.7px}
-      .lead{font-size:16.5px}
-      .hero-points{gap:8px}
-      .cta .btn{width:100%}
-      section{padding:60px 0}
-      .quick-stats{grid-template-columns:1fr 1fr}
-      .profile-card{padding:22px}
-      .profile-top{align-items:flex-start}
-      .avatar{width:72px;height:72px;border-radius:21px}
-      .visual{min-height:245px}
-      .device{width:174px}
-      .contact-shell{padding:40px 18px}
-      .contact-links .btn{width:100%}
-      .contact-meta{gap:10px}
-      .footer-inner{display:block}
-      .footer-inner span{display:block;margin-top:5px}
-      .mobile-cta{display:block}
+    @media(max-width:640px){
+      .container{width:min(var(--max),calc(100% - 24px))}
+      .nav{padding:9px 10px}.nav-links a:not(.hire){display:none}
+      .brand{font-size:14px}.brand-mark{width:38px;height:38px}
+      .hero{padding-top:42px}
+      .hero-copy{padding:19px}
+      h1{font-size:44px;letter-spacing:-2px}
+      .lead{font-size:15.5px}
+      .hero-actions .btn{width:100%}
+      .board-grid{grid-template-columns:1fr 1fr}
+      .tile{min-height:105px;padding:12px}
+      .map{grid-template-columns:1fr;gap:7px}
+      .scene{min-height:248px}
+      .ludo{width:150px;left:16px;top:35px}
+      .scene-card{width:148px;right:10px;top:19px;padding:9px}
+      .barn{right:18px;bottom:48px;transform:scale(.86);transform-origin:bottom right}
+      .telegram{left:13px;right:13px;top:28px}
+      .card,.quest,.project-body,.contact{padding:17px}
+      .contact{background:linear-gradient(180deg,#83d461 0 92px,#f7f0dc 92px 100%)}
+      .footer-inner{display:block}.footer-inner span{display:block;margin-top:5px}
+      .mobile-bar{display:block}
       footer{padding-bottom:100px}
     }
     @media(prefers-reduced-motion:reduce){
-      html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}
-      .btn,.project,.service-card{transition:none}
+      html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}.float{animation:none}
     }
   </style>
+
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
     "@type":"Person",
     "name":"Muhammad Parvez",
     "url":"https://xionhub.me/",
+    "jobTitle":"Web Developer",
+    "email":"mailto:admin@xionhub.me",
     "sameAs":[
       "https://github.com/parvez-devs",
       "https://t.me/Px0x0o",
       "https://www.instagram.com/xerox_hub/"
-    ],
-    "email":"mailto:admin@xionhub.me",
-    "jobTitle":"Web Developer"
+    ]
   }
   </script>
 </head>
 <body>
   <div class="progress" id="progress"></div>
+  <div class="sky-decor">
+    <div class="sun"></div>
+    <div class="cloud c1"></div>
+    <div class="cloud c2"></div>
+    <div class="cloud c3"></div>
+  </div>
 
-  <nav class="nav">
-    <div class="container nav-inner">
+  <div class="nav-wrap">
+    <nav class="nav">
       <a class="brand" href="#top" aria-label="Parvez Devs home">
         <span class="brand-mark">P</span>
-        <span class="brand-name">Parvez <span>Devs</span></span>
+        <div>Parvez <span>Devs</span></div>
       </a>
       <div class="nav-links">
-        <a href="#services">Services</a>
-        <a href="#projects">Work</a>
+        <a href="#quests">Services</a>
+        <a href="#builds">Projects</a>
         <a href="#about">About</a>
-        <a class="nav-cta" href="https://wa.me/8801936700142?text=Hi%20Parvez%2C%20I%20found%20you%20through%20xionhub.me%20and%20want%20to%20discuss%20a%20project." target="_blank" rel="noreferrer">Start a project</a>
+        <a class="hire" href="https://wa.me/8801936700142?text=Hi%20Parvez%2C%20I%20found%20you%20through%20xionhub.me%20and%20want%20to%20discuss%20a%20project." target="_blank" rel="noreferrer">Hire Me</a>
       </div>
-    </div>
-  </nav>
+    </nav>
+  </div>
 
   <main id="top">
-    <header class="hero">
+    <section class="hero">
       <div class="container hero-grid">
-        <div class="reveal">
-          <div class="eyebrow"><span class="dot"></span> Available for selected freelance work</div>
-          <h1>Building polished digital products that <span class="gradient">feel professional.</span></h1>
+        <div class="panel hero-copy reveal">
+          <div class="ribbon"><span class="ribbon-dot"></span> Available for project quests</div>
+          <h1>I build digital products with a <span class="hero-emphasis">game-world level of polish.</span></h1>
           <p class="lead">
-            I’m Muhammad Parvez, a web developer focused on responsive frontend experiences,
-            Telegram automations and Supabase-powered applications. I turn rough ideas,
-            broken interfaces and manual workflows into cleaner, faster products.
+            I’m Muhammad Parvez, a web developer focused on responsive interfaces, frontend fixes,
+            Telegram automation and Supabase-powered web apps. My goal is simple: make the product
+            feel memorable, work smoothly, and look good enough that users want to stay.
           </p>
-          <div class="hero-points">
-            <span class="pill"><i></i> Responsive Web UI</span>
-            <span class="pill"><i></i> JavaScript / Vite</span>
-            <span class="pill"><i></i> Supabase Integration</span>
-            <span class="pill"><i></i> Telegram Automation</span>
+
+          <div class="hero-tags">
+            <span class="hero-tag">Responsive Web UI</span>
+            <span class="hero-tag">JavaScript / Vite</span>
+            <span class="hero-tag">Supabase</span>
+            <span class="hero-tag">Telegram Bot API</span>
           </div>
-          <div class="cta">
-            <a class="btn primary" href="https://wa.me/8801936700142?text=Hi%20Parvez%2C%20I%20found%20you%20through%20xionhub.me%20and%20want%20to%20discuss%20a%20project." target="_blank" rel="noreferrer">Start a Project <span class="arrow">↗</span></a>
-            <a class="btn secondary" href="#projects">Explore My Work</a>
+
+          <div class="hero-actions">
+            <a class="btn btn-gold" href="https://wa.me/8801936700142?text=Hi%20Parvez%2C%20I%20found%20you%20through%20xionhub.me%20and%20want%20to%20discuss%20a%20project." target="_blank" rel="noreferrer">Start a Project ↗</a>
+            <a class="btn btn-green" href="#builds">Explore Builds</a>
           </div>
         </div>
 
-        <div class="profile-wrap reveal">
-          <div class="glow"></div>
-          <aside class="profile-card">
-            <div class="profile-top">
-              <img class="avatar" src="https://avatars.githubusercontent.com/u/327871675?v=4" alt="Muhammad Parvez" />
-              <div>
-                <h2>Muhammad Parvez</h2>
-                <p>@parvez-devs · Web Developer</p>
-                <div class="availability"><span></span> Open for project inquiries</div>
-              </div>
+        <aside class="gameboard reveal float">
+          <div class="board-head">
+            <span>Developer Board</span>
+            <span class="xp">XP <span class="xpbar"><span></span></span></span>
+          </div>
+
+          <div class="board-grid">
+            <div class="tile">
+              <div class="tile-icon">⚒️</div>
+              <b>Frontend</b>
+              <span>Responsive layouts, UI polish and debugging.</span>
             </div>
-            <div class="quick-stats">
-              <div class="stat"><b>Frontend</b><span>Responsive & mobile-first</span></div>
-              <div class="stat"><b>Automation</b><span>Telegram workflows</span></div>
-              <div class="stat"><b>Backend</b><span>Supabase integrations</span></div>
-              <div class="stat"><b>Deployment</b><span>GitHub & Railway</span></div>
+            <div class="tile">
+              <div class="tile-icon">🌱</div>
+              <b>Build</b>
+              <span>Landing pages and focused web experiences.</span>
             </div>
-            <div class="social-row">
-              <a class="social" href="https://github.com/parvez-devs" target="_blank" rel="noreferrer">GitHub ↗</a>
-              <a class="social" href="https://t.me/Px0x0o" target="_blank" rel="noreferrer">Telegram ↗</a>
-              <a class="social" href="https://www.instagram.com/xerox_hub/" target="_blank" rel="noreferrer">Instagram ↗</a>
+            <div class="tile">
+              <div class="tile-icon">📨</div>
+              <b>Automation</b>
+              <span>Telegram workflows, actions and notifications.</span>
             </div>
-          </aside>
-        </div>
+            <div class="tile">
+              <div class="tile-icon">🧭</div>
+              <b>Integration</b>
+              <span>Supabase, APIs, GitHub and deployment flows.</span>
+            </div>
+          </div>
+
+          <div class="profile-slot">
+            <img src="https://avatars.githubusercontent.com/u/327871675?v=4" alt="Muhammad Parvez" />
+            <div>
+              <strong>Muhammad Parvez</strong>
+              <small>@parvez-devs · Web Developer</small>
+              <span class="online"><i></i> Open for project inquiries</span>
+            </div>
+          </div>
+        </aside>
       </div>
-    </header>
+    </section>
 
-    <div class="stack-strip">
+    <div class="map-strip">
       <div class="container">
-        <div class="stack reveal">
-          <div class="stack-label">Core stack</div>
-          <div class="stack-items">
-            <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Vite</span>
-            <span>Node.js</span><span>Supabase</span><span>Telegram Bot API</span>
-            <span>GitHub</span><span>Railway</span>
+        <div class="map reveal">
+          <div class="map-label">Current loadout</div>
+          <div class="map-items">
+            <span><i></i> HTML5</span>
+            <span><i></i> CSS3</span>
+            <span><i></i> JavaScript</span>
+            <span><i></i> Vite</span>
+            <span><i></i> Node.js</span>
+            <span><i></i> Supabase</span>
+            <span><i></i> Telegram Bot API</span>
+            <span><i></i> GitHub</span>
+            <span><i></i> Railway</span>
           </div>
         </div>
       </div>
     </div>
 
-    <section id="services">
+    <section id="quests">
       <div class="container">
         <div class="section-head reveal">
-          <div>
-            <div class="mini-title">Capabilities</div>
-            <h2>Focused work that improves the product.</h2>
-          </div>
-          <p>I work best on clear, practical problems: fixing interfaces, building responsive pages, connecting systems and reducing manual work.</p>
+          <div class="wood-label">Quest Board / Services</div>
+          <p>Each service is presented like a quest: clear objective, clear outcome, and no fake promises.</p>
         </div>
 
-        <div class="services">
-          <article class="service-card reveal">
-            <div>
-              <div class="icon">⚡</div>
-              <h3>Frontend & UI Engineering</h3>
-              <p>Responsive layouts, mobile polish, visual cleanup, interaction fixes and frontend implementation with a product-first approach.</p>
-            </div>
-            <div class="service-foot"><span>Best for</span><b>Websites & web apps</b></div>
+        <div class="quest-grid">
+          <article class="quest reveal">
+            <div class="quest-icon">🛠️</div>
+            <h3>Fix the Website</h3>
+            <p>Mobile responsiveness issues, broken layouts, UI cleanup, HTML/CSS/JavaScript bugs and frontend improvements.</p>
+            <div class="quest-foot"><span>Best for existing sites</span><span class="reward">UI Upgrade</span></div>
           </article>
 
-          <article class="service-card reveal">
-            <div>
-              <div class="icon">◫</div>
-              <h3>Landing Pages & Product Pages</h3>
-              <p>Clean single-page experiences with strong hierarchy, clear calls to action and consistent performance across screen sizes.</p>
-            </div>
-            <div class="service-foot"><span>Best for</span><b>Business & product launches</b></div>
+          <article class="quest reveal">
+            <div class="quest-icon">🌾</div>
+            <h3>Build the Landing Page</h3>
+            <p>A responsive, visually polished page with stronger hierarchy, clear calls to action and a better mobile experience.</p>
+            <div class="quest-foot"><span>Best for businesses</span><span class="reward">New Build</span></div>
           </article>
 
-          <article class="service-card reveal">
-            <div>
-              <div class="icon">⌁</div>
-              <h3>Automation & Integration</h3>
-              <p>Telegram bot workflows, notifications, approval flows, webhooks and Supabase integrations that connect your product to real operations.</p>
-            </div>
-            <div class="service-foot"><span>Best for</span><b>Manual workflow reduction</b></div>
+          <article class="quest reveal">
+            <div class="quest-icon">🤖</div>
+            <h3>Automate the Workflow</h3>
+            <p>Telegram notifications, action buttons, webhooks and website-to-bot workflows that reduce repetitive manual work.</p>
+            <div class="quest-foot"><span>Best for operations</span><span class="reward">Automation</span></div>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="projects">
+    <section id="builds">
       <div class="container">
         <div class="section-head reveal">
-          <div>
-            <div class="mini-title">Selected work</div>
-            <h2>Real projects, shown without fake claims.</h2>
-          </div>
-          <p>These are projects and prototypes I’m actively developing. Unfinished functionality is clearly labeled instead of being presented as completed client work.</p>
+          <div class="wood-label">World Map / Active Builds</div>
+          <p>Projects are shown like locations on a game map, while development status stays completely transparent.</p>
         </div>
 
-        <div class="projects">
+        <div class="project-grid">
           <article class="project reveal">
-            <div class="visual">
-              <div class="device" aria-label="PlayLuduHub interface preview">
-                <div class="device-screen">
-                  <div class="device-top"></div>
-                  <div class="board"></div>
-                  <div class="device-foot"></div>
-                </div>
+            <div class="scene">
+              <div class="field"></div>
+              <div class="barn"></div>
+              <div class="ludo">
+                <div class="q1"></div><div class="q2"></div><div class="q3"></div><div class="q4"></div>
+              </div>
+              <div class="scene-card">
+                <small>GAME BUILD</small>
+                <h4>PlayLuduHub</h4>
+                <p>Mobile-first Ludo product with game UI, matchmaking concepts and backend planning.</p>
               </div>
             </div>
             <div class="project-body">
-              <span class="status">ACTIVE DEVELOPMENT · UI PREVIEW</span>
+              <span class="status">IN DEVELOPMENT · UI PREVIEW</span>
               <h3>PlayLuduHub</h3>
-              <p>A mobile-first HTML5 Ludo platform exploring game UI, matchmaking, player state, admin workflows and backend integration.</p>
+              <p>
+                An HTML5 Ludo platform exploring premium game UI, player flow, admin workflows,
+                matchmaking concepts and Supabase-backed application architecture.
+              </p>
               <div class="tags">
                 <span class="tag">HTML5</span><span class="tag">JavaScript</span><span class="tag">Vite</span><span class="tag">Supabase</span>
               </div>
-              <div class="project-links">
-                <a href="https://github.com/parvez-devs/playluduhub" target="_blank" rel="noreferrer">View repository ↗</a>
-              </div>
+              <a class="project-link" href="https://github.com/parvez-devs/playluduhub" target="_blank" rel="noreferrer">View repository ↗</a>
             </div>
           </article>
 
           <article class="project reveal">
-            <div class="visual">
-              <div class="bot-panel" aria-label="Telegram approval workflow preview">
-                <div class="bot-head">Telegram Approval Workflow</div>
-                <div class="msg">
-                  <b>New website request</b><br>
-                  Website event → Telegram notification → Admin action → Application update
+            <div class="scene">
+              <div class="field"></div>
+              <div class="telegram">
+                <div class="telegram-head">Telegram Approval Workflow</div>
+                <div class="telegram-msg">
+                  <strong>New website event</strong><br>
+                  Website → Telegram notification → Admin action → App update
                 </div>
-                <div class="bot-actions">
-                  <div class="action ok">Approve</div>
-                  <div class="action no">Reject</div>
+                <div class="telegram-actions">
+                  <div class="tg-action approve">Approve</div>
+                  <div class="tg-action reject">Reject</div>
                 </div>
               </div>
             </div>
             <div class="project-body">
               <span class="status">PROTOTYPE · UI PREVIEW</span>
               <h3>Telegram Bot Automation</h3>
-              <p>A workflow concept for receiving website events in Telegram, presenting admin actions and sending the decision back to the application.</p>
+              <p>
+                A workflow concept for receiving website events in Telegram, presenting admin actions,
+                and sending the decision back into the application.
+              </p>
               <div class="tags">
                 <span class="tag">Telegram Bot API</span><span class="tag">Node.js</span><span class="tag">Webhooks</span><span class="tag">Supabase</span>
               </div>
@@ -528,62 +617,67 @@
     </section>
 
     <section id="about">
-      <div class="container about">
-        <div class="about-box reveal">
-          <div class="mini-title">How I work</div>
-          <h2>Clear scope. Clean build. Tested delivery.</h2>
+      <div class="container info-grid">
+        <article class="card reveal">
+          <div class="wood-label">Inventory / Skills</div>
+          <h2>Fun visual identity. Serious delivery.</h2>
           <p>
-            I prefer practical development over unnecessary complexity. The goal is to understand the actual problem,
-            build the smallest reliable solution, test the important flows and leave the project easier to maintain.
+            The game-board style is there to make the portfolio memorable, not childish.
+            The actual work stays focused on usability, responsiveness, integrations and reliable delivery.
           </p>
-          <div class="skills">
-            <span class="skill">Responsive Design</span><span class="skill">Frontend Debugging</span>
-            <span class="skill">Web App Integration</span><span class="skill">Automation</span>
-            <span class="skill">Mobile-first UI</span><span class="skill">Deployment</span>
+          <div class="inventory">
+            <span class="item">Responsive Design</span>
+            <span class="item">Frontend Debugging</span>
+            <span class="item">Mobile-first UI</span>
+            <span class="item">Automation</span>
+            <span class="item">Supabase Integration</span>
+            <span class="item">Deployment</span>
           </div>
-        </div>
+        </article>
 
-        <div class="process reveal">
-          <div class="step">
-            <div class="num">01</div>
-            <div><h4>Scope the problem</h4><p>Define what is broken, what needs to be built and what success should look like.</p></div>
+        <article class="card reveal">
+          <div class="wood-label">Level Path / Workflow</div>
+          <div class="steps">
+            <div class="step">
+              <div class="num">01</div>
+              <div><h4>Understand the objective</h4><p>Define what needs to be built or fixed and what result matters.</p></div>
+            </div>
+            <div class="step">
+              <div class="num">02</div>
+              <div><h4>Build the right layer</h4><p>Create the interface, logic, integration or automation needed for the job.</p></div>
+            </div>
+            <div class="step">
+              <div class="num">03</div>
+              <div><h4>Test the player journey</h4><p>Check important flows, mobile behavior and obvious failure points.</p></div>
+            </div>
+            <div class="step">
+              <div class="num">04</div>
+              <div><h4>Deliver cleanly</h4><p>Keep the project understandable so future changes remain manageable.</p></div>
+            </div>
           </div>
-          <div class="step">
-            <div class="num">02</div>
-            <div><h4>Build the right layer</h4><p>Implement responsive UI, frontend logic, integrations or automation based on the project need.</p></div>
-          </div>
-          <div class="step">
-            <div class="num">03</div>
-            <div><h4>Test the important flows</h4><p>Check mobile behavior, user paths and core functionality before handoff.</p></div>
-          </div>
-          <div class="step">
-            <div class="num">04</div>
-            <div><h4>Deliver with clarity</h4><p>Keep the project structure understandable so future changes are easier to make.</p></div>
-          </div>
-        </div>
+        </article>
       </div>
-    </section>
 
-    <section id="contact">
       <div class="container">
-        <div class="contact-shell reveal">
-          <div class="mini-title">Start a conversation</div>
-          <h2>Have a project that needs to look and work better?</h2>
-          <p>Send the website link, what you want fixed or built, and any deadline you have. I’ll respond with the clearest next step.</p>
+        <section class="contact reveal" aria-label="Contact">
+          <h2>Ready to start a new quest?</h2>
+          <p>Send your website, problem or project idea. I’ll reply with the clearest next step.</p>
 
           <div class="contact-links">
-            <a class="btn primary" href="https://wa.me/8801936700142?text=Hi%20Parvez%2C%20I%20found%20you%20through%20xionhub.me%20and%20want%20to%20discuss%20a%20project." target="_blank" rel="noreferrer">WhatsApp <span class="arrow">↗</span></a>
-            <a class="btn secondary" href="https://t.me/Px0x0o" target="_blank" rel="noreferrer">Telegram</a>
-            <a class="btn secondary" href="mailto:admin@xionhub.me?subject=Project%20Inquiry%20from%20xionhub.me">Email</a>
+            <a href="https://wa.me/8801936700142?text=Hi%20Parvez%2C%20I%20found%20you%20through%20xionhub.me%20and%20want%20to%20discuss%20a%20project." target="_blank" rel="noreferrer">WhatsApp</a>
+            <a href="https://t.me/Px0x0o" target="_blank" rel="noreferrer">Telegram</a>
+            <a href="https://www.instagram.com/xerox_hub/" target="_blank" rel="noreferrer">Instagram</a>
+            <a href="mailto:admin@xionhub.me?subject=Project%20Inquiry%20from%20xionhub.me">Email</a>
+            <a href="https://github.com/parvez-devs" target="_blank" rel="noreferrer">GitHub</a>
           </div>
 
           <div class="contact-meta">
-            <a href="https://wa.me/8801936700142" target="_blank" rel="noreferrer">01936700142</a>
-            <a href="https://t.me/Px0x0o" target="_blank" rel="noreferrer">@Px0x0o</a>
-            <a href="https://www.instagram.com/xerox_hub/" target="_blank" rel="noreferrer">@xerox_hub</a>
-            <a href="mailto:admin@xionhub.me">admin@xionhub.me</a>
+            <span>WhatsApp: 01936700142</span>
+            <span>Telegram: @Px0x0o</span>
+            <span>Instagram: @xerox_hub</span>
+            <span>Email: admin@xionhub.me</span>
           </div>
-        </div>
+        </section>
       </div>
     </section>
   </main>
@@ -595,10 +689,10 @@
     </div>
   </footer>
 
-  <div class="mobile-cta" aria-label="Quick contact">
-    <div class="mobile-cta-inner">
-      <a class="wa" href="https://wa.me/8801936700142?text=Hi%20Parvez%2C%20I%20found%20you%20through%20xionhub.me%20and%20want%20to%20discuss%20a%20project." target="_blank" rel="noreferrer">WhatsApp</a>
-      <a class="tg" href="https://t.me/Px0x0o" target="_blank" rel="noreferrer">Telegram</a>
+  <div class="mobile-bar">
+    <div class="mobile-bar-inner">
+      <a class="mobile-wa" href="https://wa.me/8801936700142?text=Hi%20Parvez%2C%20I%20found%20you%20through%20xionhub.me%20and%20want%20to%20discuss%20a%20project." target="_blank" rel="noreferrer">WhatsApp</a>
+      <a class="mobile-tg" href="https://t.me/Px0x0o" target="_blank" rel="noreferrer">Telegram</a>
     </div>
   </div>
 
@@ -612,7 +706,7 @@
             observer.unobserve(entry.target);
           }
         });
-      }, { threshold: 0.12 });
+      }, { threshold: .12 });
       revealItems.forEach((el) => observer.observe(el));
     } else {
       revealItems.forEach((el) => el.classList.add('show'));
@@ -620,12 +714,11 @@
 
     const progress = document.getElementById('progress');
     const updateProgress = () => {
-      const max = document.documentElement.scrollHeight - window.innerHeight;
-      const value = max > 0 ? (window.scrollY / max) * 100 : 0;
-      progress.style.width = value + '%';
+      const max = document.documentElement.scrollHeight - innerHeight;
+      progress.style.width = (max > 0 ? (scrollY / max) * 100 : 0) + '%';
     };
     updateProgress();
-    window.addEventListener('scroll', updateProgress, { passive: true });
+    addEventListener('scroll', updateProgress, { passive: true });
   </script>
 </body>
 </html>
