@@ -1,0 +1,13 @@
+{
+  "name": "xionhub-portfolio",
+  "private": true,
+  "version": "2.0.0",
+  "description": "TypeScript-powered cinematic gameboard portfolio for xionhub.me",
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.3"
+  }
+}
