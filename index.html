@@ -2,232 +2,362 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#07111f" />
-  <meta name="description" content="Muhammad Parvez — Web Developer building responsive websites, fixing frontend bugs, creating Telegram bot workflows, and integrating Supabase." />
-  <meta property="og:title" content="Parvez Devs | Web Developer" />
-  <meta property="og:description" content="Responsive websites, frontend fixes, Telegram bot workflows and Supabase integrations." />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#06101b" />
+  <meta name="description" content="Muhammad Parvez — Web Developer building responsive websites, frontend experiences, Telegram automations and Supabase-powered web applications." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://xionhub.me/" />
+  <meta property="og:title" content="Parvez Devs — Web Developer" />
+  <meta property="og:description" content="Responsive websites, frontend engineering, Telegram automations and Supabase integrations." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://xionhub.me" />
-  <title>Parvez Devs | Web Developer</title>
+  <meta property="og:url" content="https://xionhub.me/" />
+  <meta property="og:image" content="https://avatars.githubusercontent.com/u/327871675?v=4" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <title>Parvez Devs — Web Developer</title>
   <style>
     :root{
-      --bg:#07111f;
-      --bg2:#0a1727;
-      --panel:#0d1b2d;
-      --soft:#13243a;
-      --text:#eef6ff;
-      --muted:#9fb2c8;
-      --accent:#56e39f;
-      --accent2:#69a7ff;
-      --line:rgba(255,255,255,.09);
-      --shadow:0 22px 70px rgba(0,0,0,.30);
-      --radius:24px;
-      --max:1120px;
+      --bg:#06101b;
+      --bg-soft:#0a1624;
+      --surface:rgba(255,255,255,.045);
+      --surface-strong:rgba(255,255,255,.065);
+      --line:rgba(255,255,255,.10);
+      --line-strong:rgba(255,255,255,.16);
+      --text:#f5f8fc;
+      --muted:#9dafc3;
+      --green:#64e6a5;
+      --blue:#74a9ff;
+      --cyan:#64d8e8;
+      --danger:#ff8585;
+      --shadow:0 30px 90px rgba(0,0,0,.34);
+      --radius:26px;
+      --max:1180px;
     }
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
     body{
       margin:0;
       color:var(--text);
-      line-height:1.65;
       font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
       background:
-        radial-gradient(circle at 12% 0%,rgba(105,167,255,.15),transparent 28%),
-        radial-gradient(circle at 92% 5%,rgba(86,227,159,.12),transparent 24%),
-        linear-gradient(180deg,var(--bg),var(--bg2));
+        radial-gradient(900px 480px at 10% -10%,rgba(116,169,255,.18),transparent 62%),
+        radial-gradient(760px 420px at 100% 0%,rgba(100,230,165,.13),transparent 58%),
+        linear-gradient(180deg,#06101b 0%,#071421 48%,#06101b 100%);
+      line-height:1.65;
       overflow-x:hidden;
     }
+    body:before{
+      content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;opacity:.28;
+      background-image:
+        linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);
+      background-size:34px 34px;
+      mask-image:linear-gradient(to bottom,black,transparent 84%);
+    }
+    ::selection{background:rgba(100,230,165,.28);color:#fff}
     a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
     button{font:inherit}
-    .container{width:min(var(--max),calc(100% - 36px));margin:auto}
+    .container{width:min(var(--max),calc(100% - 40px));margin:auto}
+    .progress{position:fixed;left:0;top:0;height:2px;width:0;background:linear-gradient(90deg,var(--green),var(--blue));z-index:100}
     .nav{
-      position:sticky;top:0;z-index:50;
-      background:rgba(7,17,31,.78);
-      border-bottom:1px solid var(--line);
-      backdrop-filter:blur(18px);
+      position:sticky;top:0;z-index:80;
+      backdrop-filter:blur(20px) saturate(140%);
+      background:rgba(6,16,27,.72);
+      border-bottom:1px solid rgba(255,255,255,.07)
     }
-    .nav-inner{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:22px}
-    .brand{display:flex;align-items:center;gap:11px;font-weight:900;letter-spacing:.1px}
+    .nav-inner{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:22px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:900;letter-spacing:-.2px}
     .brand-mark{
-      width:34px;height:34px;border-radius:11px;display:grid;place-items:center;
-      background:linear-gradient(135deg,var(--accent),var(--accent2));
-      color:#07111f;font-weight:950;box-shadow:0 8px 25px rgba(86,227,159,.16)
+      position:relative;width:38px;height:38px;border-radius:12px;display:grid;place-items:center;
+      color:#041018;font-weight:950;background:linear-gradient(145deg,var(--green),var(--blue));
+      box-shadow:0 10px 28px rgba(100,230,165,.15)
     }
-    .brand span{color:var(--accent)}
-    .nav-links{display:flex;align-items:center;gap:22px;color:var(--muted);font-size:14px}
-    .nav-links a:hover{color:var(--text)}
-    .nav-cta{padding:9px 13px;border-radius:12px;border:1px solid rgba(86,227,159,.2);color:#c9f8e2;background:rgba(86,227,159,.05)}
-    .hero{padding:82px 0 68px;position:relative}
-    .hero-grid{display:grid;grid-template-columns:1.17fr .83fr;gap:42px;align-items:center}
+    .brand-mark:after{content:"";position:absolute;inset:1px;border-radius:11px;border:1px solid rgba(255,255,255,.28)}
+    .brand-name span{color:var(--green)}
+    .nav-links{display:flex;align-items:center;gap:24px;color:var(--muted);font-size:14px}
+    .nav-links a{transition:.2s ease}
+    .nav-links a:hover{color:#fff}
+    .nav-cta{
+      color:#dff9ed!important;padding:10px 14px;border-radius:12px;
+      border:1px solid rgba(100,230,165,.22);background:rgba(100,230,165,.07)
+    }
+
+    .hero{padding:92px 0 54px;position:relative}
+    .hero-grid{display:grid;grid-template-columns:1.18fr .82fr;gap:54px;align-items:center}
     .eyebrow{
-      display:inline-flex;align-items:center;gap:9px;
-      padding:8px 12px;border:1px solid rgba(86,227,159,.24);
-      border-radius:999px;color:#bdf8dc;background:rgba(86,227,159,.06);
-      font-size:13px;font-weight:800;
+      display:inline-flex;align-items:center;gap:10px;padding:8px 12px;border-radius:999px;
+      color:#d7f9e8;background:rgba(100,230,165,.06);border:1px solid rgba(100,230,165,.20);
+      font-weight:800;font-size:13px
     }
-    .dot{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 6px rgba(86,227,159,.10)}
-    h1{font-size:clamp(44px,7vw,76px);line-height:1.02;margin:23px 0 20px;letter-spacing:-2.6px}
-    .gradient{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
-    .lead{font-size:18px;color:var(--muted);max-width:700px}
+    .dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 0 6px rgba(100,230,165,.10)}
+    h1{
+      margin:24px 0 22px;font-size:clamp(50px,7.2vw,86px);line-height:.98;
+      letter-spacing:-4px;max-width:900px
+    }
+    .gradient{
+      background:linear-gradient(90deg,var(--green) 0%,var(--cyan) 45%,var(--blue) 100%);
+      -webkit-background-clip:text;background-clip:text;color:transparent
+    }
+    .lead{max-width:760px;color:var(--muted);font-size:18px;line-height:1.75}
+    .hero-points{display:flex;flex-wrap:wrap;gap:10px;margin-top:23px}
+    .pill{
+      display:inline-flex;align-items:center;gap:8px;padding:8px 11px;border-radius:999px;
+      border:1px solid var(--line);background:rgba(255,255,255,.025);font-size:12px;color:#c8d5e5
+    }
+    .pill i{width:7px;height:7px;border-radius:50%;background:var(--blue);display:inline-block}
     .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
     .btn{
-      display:inline-flex;align-items:center;justify-content:center;gap:9px;
-      padding:13px 18px;border-radius:14px;font-weight:850;
-      border:1px solid var(--line);transition:.22s ease;
+      min-height:50px;display:inline-flex;align-items:center;justify-content:center;gap:9px;
+      padding:0 18px;border-radius:14px;border:1px solid var(--line);
+      font-weight:850;transition:.22s ease;position:relative;overflow:hidden
     }
-    .btn.primary{background:linear-gradient(135deg,var(--accent),#3ed38f);color:#06111f;border:none}
-    .btn.secondary{background:rgba(255,255,255,.03)}
-    .btn:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(0,0,0,.20)}
+    .btn:before{
+      content:"";position:absolute;inset:0;transform:translateX(-110%);
+      background:linear-gradient(100deg,transparent,rgba(255,255,255,.10),transparent);transition:.45s ease
+    }
+    .btn:hover:before{transform:translateX(110%)}
+    .btn:hover{transform:translateY(-2px);border-color:var(--line-strong)}
+    .btn.primary{border:0;color:#06101b;background:linear-gradient(135deg,var(--green),#43d78f);box-shadow:0 14px 36px rgba(100,230,165,.15)}
+    .btn.secondary{background:rgba(255,255,255,.035)}
+    .arrow{font-size:18px}
+
+    .profile-wrap{position:relative}
+    .glow{
+      position:absolute;width:300px;height:300px;border-radius:50%;right:-80px;top:-80px;
+      background:radial-gradient(circle,rgba(116,169,255,.22),transparent 65%);filter:blur(8px);pointer-events:none
+    }
     .profile-card{
-      position:relative;overflow:hidden;border-radius:30px;padding:28px;
-      background:linear-gradient(180deg,rgba(255,255,255,.055),rgba(255,255,255,.025));
-      border:1px solid var(--line);box-shadow:var(--shadow)
+      position:relative;overflow:hidden;padding:28px;border-radius:30px;
+      border:1px solid rgba(255,255,255,.10);
+      background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.03));
+      box-shadow:var(--shadow);backdrop-filter:blur(18px)
     }
-    .profile-card:before{
-      content:"";position:absolute;width:220px;height:220px;border-radius:50%;
-      right:-90px;top:-95px;background:rgba(86,227,159,.11);filter:blur(8px)
+    .profile-card:after{
+      content:"";position:absolute;inset:0;pointer-events:none;
+      background:linear-gradient(135deg,rgba(255,255,255,.07),transparent 35%,transparent 70%,rgba(100,230,165,.04))
     }
-    .profile-top{display:flex;align-items:center;gap:16px;position:relative}
+    .profile-top{position:relative;z-index:2;display:flex;align-items:center;gap:17px}
     .avatar{
-      width:78px;height:78px;border-radius:23px;object-fit:cover;
-      border:2px solid rgba(255,255,255,.14);box-shadow:0 14px 35px rgba(0,0,0,.32)
+      width:86px;height:86px;border-radius:24px;object-fit:cover;
+      border:2px solid rgba(255,255,255,.16);box-shadow:0 18px 45px rgba(0,0,0,.36)
     }
-    .profile-top h2{margin:0;font-size:24px;letter-spacing:-.5px}
+    .profile-top h2{margin:0;font-size:25px;letter-spacing:-.7px}
     .profile-top p{margin:3px 0 0;color:var(--muted);font-size:14px}
-    .quick-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:22px}
-    .stat{padding:14px;border-radius:15px;background:rgba(255,255,255,.03);border:1px solid var(--line)}
-    .stat b{display:block;font-size:14px}
-    .stat span{font-size:12px;color:var(--muted)}
-    .profile-note{margin:18px 0 0;color:var(--muted);font-size:13px}
-    section{padding:72px 0}
-    .section-head{display:flex;justify-content:space-between;gap:28px;align-items:end;margin-bottom:30px}
-    .mini-title{font-size:12px;text-transform:uppercase;letter-spacing:1.7px;color:var(--muted);font-weight:900}
-    .section-head h2{font-size:clamp(30px,5vw,40px);margin:4px 0 0;letter-spacing:-1.2px}
-    .section-head p{max-width:620px;color:var(--muted);margin:0}
-    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .card{
-      background:rgba(255,255,255,.035);border:1px solid var(--line);
-      border-radius:var(--radius);padding:24px;transition:.22s ease
+    .availability{display:inline-flex;align-items:center;gap:7px;margin-top:7px;color:#c8f5df;font-size:12px}
+    .availability span{width:7px;height:7px;border-radius:50%;background:var(--green)}
+    .quick-stats{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-top:22px}
+    .stat{
+      padding:15px;border-radius:16px;background:rgba(6,16,27,.42);
+      border:1px solid rgba(255,255,255,.08)
     }
-    .card:hover{transform:translateY(-4px);border-color:rgba(105,167,255,.22)}
-    .card h3{margin:14px 0 8px;font-size:20px}
-    .card p{color:var(--muted);margin:0}
+    .stat b{display:block;font-size:14px}.stat span{display:block;margin-top:2px;color:var(--muted);font-size:12px}
+    .social-row{position:relative;z-index:2;display:flex;gap:9px;flex-wrap:wrap;margin-top:18px}
+    .social{
+      padding:9px 11px;border-radius:11px;border:1px solid var(--line);
+      background:rgba(255,255,255,.025);font-size:12px;color:#d1ddeb
+    }
+
+    .stack-strip{padding:14px 0 4px}
+    .stack{
+      display:grid;grid-template-columns:auto 1fr;gap:26px;align-items:center;
+      padding:17px 18px;border:1px solid rgba(255,255,255,.07);border-radius:18px;background:rgba(255,255,255,.025)
+    }
+    .stack-label{font-size:11px;text-transform:uppercase;letter-spacing:1.7px;color:#7f93aa;font-weight:900}
+    .stack-items{display:flex;gap:20px;flex-wrap:wrap;color:#bdcadd;font-weight:800;font-size:13px}
+
+    section{padding:78px 0}
+    .section-head{display:flex;justify-content:space-between;gap:34px;align-items:end;margin-bottom:32px}
+    .mini-title{font-size:11px;text-transform:uppercase;letter-spacing:1.8px;color:#7f93aa;font-weight:900}
+    .section-head h2,.about-box h2{font-size:clamp(32px,5vw,44px);line-height:1.07;letter-spacing:-1.7px;margin:6px 0 0}
+    .section-head p{max-width:610px;color:var(--muted);margin:0}
+    .services{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .service-card{
+      min-height:255px;display:flex;flex-direction:column;justify-content:space-between;
+      padding:25px;border-radius:var(--radius);background:var(--surface);border:1px solid var(--line);
+      transition:.24s ease;position:relative;overflow:hidden
+    }
+    .service-card:before{
+      content:"";position:absolute;width:150px;height:150px;border-radius:50%;right:-60px;top:-60px;
+      background:rgba(116,169,255,.07);transition:.3s ease
+    }
+    .service-card:hover{transform:translateY(-5px);border-color:rgba(116,169,255,.22);background:var(--surface-strong)}
+    .service-card:hover:before{transform:scale(1.18)}
     .icon{
-      width:46px;height:46px;border-radius:14px;display:grid;place-items:center;
-      background:linear-gradient(135deg,rgba(86,227,159,.17),rgba(105,167,255,.16));
-      border:1px solid var(--line);font-size:20px;
+      width:48px;height:48px;border-radius:15px;display:grid;place-items:center;
+      background:linear-gradient(145deg,rgba(100,230,165,.15),rgba(116,169,255,.15));
+      border:1px solid rgba(255,255,255,.08);font-size:20px
     }
+    .service-card h3{font-size:21px;margin:18px 0 8px;letter-spacing:-.4px}
+    .service-card p{margin:0;color:var(--muted);font-size:14px}
+    .service-foot{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:24px;padding-top:16px;border-top:1px solid rgba(255,255,255,.07);font-size:12px;color:#aebed0}
+    .service-foot b{color:#dbe6f3}
+
     .projects{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-    .project{overflow:hidden;background:rgba(255,255,255,.035);border:1px solid var(--line);border-radius:26px;transition:.22s ease}
-    .project:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
-    .mockup{
-      min-height:280px;padding:20px;display:flex;align-items:center;justify-content:center;
+    .project{
+      border:1px solid var(--line);border-radius:28px;overflow:hidden;background:var(--surface);
+      transition:.25s ease
+    }
+    .project:hover{transform:translateY(-5px);box-shadow:var(--shadow);border-color:rgba(100,230,165,.18)}
+    .visual{
+      min-height:320px;position:relative;display:grid;place-items:center;overflow:hidden;
       background:
-        radial-gradient(circle at 25% 20%,rgba(105,167,255,.24),transparent 28%),
-        radial-gradient(circle at 80% 78%,rgba(86,227,159,.17),transparent 28%),
-        #0e2034;
-      border-bottom:1px solid var(--line)
+        radial-gradient(circle at 20% 20%,rgba(116,169,255,.24),transparent 28%),
+        radial-gradient(circle at 82% 76%,rgba(100,230,165,.15),transparent 28%),
+        #0a1a2a
     }
-    .phone{
-      width:188px;border:1px solid rgba(255,255,255,.13);border-radius:26px;padding:10px;
-      background:#06101c;box-shadow:0 24px 50px rgba(0,0,0,.38);transform:rotate(-3deg)
+    .visual:before{
+      content:"";position:absolute;inset:0;
+      background-image:linear-gradient(rgba(255,255,255,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.022) 1px,transparent 1px);
+      background-size:28px 28px;mask-image:linear-gradient(to bottom,black,transparent)
     }
-    .screen{border-radius:18px;overflow:hidden;background:#102239}
-    .screen-top{height:32px;background:#0a1727;border-bottom:1px solid var(--line)}
-    .board{aspect-ratio:1/1;margin:12px;border-radius:12px;background:
-      linear-gradient(90deg,rgba(86,227,159,.28) 50%,rgba(105,167,255,.28) 50%);
-      position:relative;overflow:hidden
+    .device{
+      width:205px;padding:10px;border-radius:28px;background:#050d16;border:1px solid rgba(255,255,255,.13);
+      box-shadow:0 28px 70px rgba(0,0,0,.38);transform:rotate(-3deg);position:relative;z-index:2
     }
-    .board:before,.board:after{content:"";position:absolute;background:rgba(255,255,255,.12)}
+    .device-screen{border-radius:19px;overflow:hidden;background:#102337}
+    .device-top{height:34px;border-bottom:1px solid rgba(255,255,255,.08);background:#07131f}
+    .board{
+      aspect-ratio:1/1;margin:13px;border-radius:13px;position:relative;overflow:hidden;
+      background:linear-gradient(90deg,rgba(100,230,165,.30) 0 50%,rgba(116,169,255,.30) 50% 100%)
+    }
+    .board:before,.board:after{content:"";position:absolute;background:rgba(255,255,255,.13)}
     .board:before{width:16%;height:100%;left:42%}.board:after{height:16%;width:100%;top:42%}
-    .screen-foot{height:44px;margin:0 12px 12px;border-radius:10px;background:rgba(255,255,255,.06)}
-    .bot-ui{
-      width:min(390px,100%);border:1px solid rgba(255,255,255,.12);border-radius:20px;
-      background:#081624;box-shadow:0 24px 50px rgba(0,0,0,.36);overflow:hidden
+    .device-foot{height:46px;margin:0 13px 13px;border-radius:10px;background:rgba(255,255,255,.055)}
+    .bot-panel{
+      width:min(410px,88%);position:relative;z-index:2;border-radius:21px;overflow:hidden;
+      background:#071520;border:1px solid rgba(255,255,255,.12);box-shadow:0 28px 70px rgba(0,0,0,.38)
     }
-    .bot-head{padding:14px 16px;border-bottom:1px solid var(--line);font-weight:800}
-    .msg{margin:14px;padding:14px;border-radius:14px;background:#10263d;color:#dce9f8;font-size:13px}
-    .bot-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:0 14px 14px}
-    .action{padding:10px;border-radius:10px;text-align:center;font-size:12px;font-weight:850;border:1px solid var(--line)}
-    .action.ok{background:rgba(86,227,159,.12);color:#bdf8dc}
-    .action.no{background:rgba(255,110,110,.08);color:#ffc6c6}
-    .project-body{padding:24px}
-    .status{display:inline-flex;padding:6px 10px;border-radius:999px;font-size:12px;font-weight:850;background:rgba(105,167,255,.09);color:#b9d4ff;border:1px solid rgba(105,167,255,.18)}
-    .project h3{font-size:24px;margin:14px 0 8px}
-    .project p{color:var(--muted)}
-    .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
-    .tag{font-size:12px;color:#c9d7e8;padding:6px 9px;border:1px solid var(--line);border-radius:999px}
-    .project-links{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px;font-size:13px;font-weight:800}
-    .project-links a{color:#bfe0ff}
-    .pricing{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .price-card{position:relative}
-    .price{font-size:30px;font-weight:950;margin:14px 0 4px;letter-spacing:-1px}
-    .price small{font-size:12px;color:var(--muted);font-weight:700}
-    .price-list{padding:0;margin:16px 0 0;list-style:none;display:grid;gap:8px;color:var(--muted);font-size:14px}
-    .price-list li:before{content:"✓";color:var(--accent);font-weight:900;margin-right:8px}
-    .price-note{font-size:12px;color:var(--muted);margin-top:18px}
+    .bot-head{padding:15px 17px;border-bottom:1px solid rgba(255,255,255,.08);font-weight:850}
+    .msg{margin:15px;padding:15px;border-radius:14px;background:#10283e;color:#dce8f6;font-size:13px}
+    .bot-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:0 15px 15px}
+    .action{padding:11px;border-radius:11px;text-align:center;font-size:12px;font-weight:850;border:1px solid rgba(255,255,255,.08)}
+    .action.ok{background:rgba(100,230,165,.11);color:#c9f7df}.action.no{background:rgba(255,133,133,.07);color:#ffc9c9}
+    .project-body{padding:25px}
+    .status{
+      display:inline-flex;padding:6px 10px;border-radius:999px;font-size:11px;font-weight:850;
+      color:#c9dcff;border:1px solid rgba(116,169,255,.20);background:rgba(116,169,255,.07)
+    }
+    .project h3{font-size:25px;letter-spacing:-.6px;margin:15px 0 8px}
+    .project p{color:var(--muted);font-size:14px}
+    .tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
+    .tag{font-size:11px;padding:6px 9px;border-radius:999px;border:1px solid var(--line);color:#cbd7e5;background:rgba(255,255,255,.02)}
+    .project-links{display:flex;gap:14px;flex-wrap:wrap;margin-top:20px;font-size:13px;font-weight:850}
+    .project-links a{color:#c9e2ff}
+
     .about{display:grid;grid-template-columns:.9fr 1.1fr;gap:28px;align-items:start}
-    .about-box{padding:28px;border-radius:24px;background:linear-gradient(145deg,rgba(86,227,159,.07),rgba(105,167,255,.05));border:1px solid var(--line)}
-    .about-box h2{margin-top:4px;font-size:34px}
+    .about-box{
+      padding:30px;border-radius:28px;background:linear-gradient(145deg,rgba(100,230,165,.07),rgba(116,169,255,.05));
+      border:1px solid var(--line)
+    }
     .about-box p{color:var(--muted)}
-    .skills{display:flex;flex-wrap:wrap;gap:10px}
-    .skill{padding:9px 12px;border-radius:12px;border:1px solid var(--line);background:rgba(255,255,255,.025);font-size:13px}
+    .skills{display:flex;gap:9px;flex-wrap:wrap;margin-top:20px}
+    .skill{padding:8px 11px;border-radius:11px;border:1px solid var(--line);background:rgba(255,255,255,.025);font-size:12px;color:#c8d5e5}
     .process{display:grid;gap:12px}
-    .step{display:grid;grid-template-columns:42px 1fr;gap:14px;padding:17px;border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.025)}
-    .num{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;background:var(--soft);font-weight:950;color:var(--accent)}
-    .step h4{margin:0 0 3px}.step p{margin:0;color:var(--muted);font-size:14px}
-    .contact{
-      text-align:center;padding:44px;border:1px solid var(--line);border-radius:30px;
-      background:linear-gradient(145deg,rgba(86,227,159,.08),rgba(105,167,255,.08));
+    .step{
+      display:grid;grid-template-columns:46px 1fr;gap:15px;padding:18px;border-radius:18px;
+      border:1px solid var(--line);background:rgba(255,255,255,.028)
+    }
+    .num{width:46px;height:46px;border-radius:13px;display:grid;place-items:center;background:#102337;color:var(--green);font-weight:950}
+    .step h4{margin:0 0 4px;font-size:16px}.step p{margin:0;color:var(--muted);font-size:13px}
+
+    .contact-shell{
+      position:relative;overflow:hidden;text-align:center;padding:54px 28px;border-radius:32px;
+      border:1px solid rgba(255,255,255,.11);background:
+        radial-gradient(circle at 50% -20%,rgba(100,230,165,.15),transparent 42%),
+        linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.025));
       box-shadow:var(--shadow)
     }
-    .contact h2{font-size:clamp(32px,5vw,42px);margin:6px 0 12px}.contact p{color:var(--muted);max-width:650px;margin:0 auto 24px}
-    .contact-mail{display:inline-block;margin-top:5px;color:#cce0f6;font-size:14px}
-    footer{padding:32px 0 46px;color:var(--muted);font-size:13px}
-    .footer-inner{display:flex;justify-content:space-between;gap:20px;border-top:1px solid var(--line);padding-top:24px}
+    .contact-shell h2{font-size:clamp(36px,6vw,54px);line-height:1.02;letter-spacing:-2.2px;margin:8px auto 14px;max-width:780px}
+    .contact-shell p{max-width:680px;margin:0 auto;color:var(--muted)}
+    .contact-links{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:26px}
+    .contact-meta{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-top:16px;color:#94a7bd;font-size:12px}
+    .contact-meta a:hover{color:#fff}
+
+    footer{padding:34px 0 110px;color:#8194aa;font-size:12px}
+    .footer-inner{display:flex;justify-content:space-between;gap:20px;padding-top:24px;border-top:1px solid rgba(255,255,255,.07)}
+
+    .mobile-cta{
+      display:none;position:fixed;left:12px;right:12px;bottom:12px;z-index:70;
+      padding:10px;border-radius:17px;border:1px solid rgba(255,255,255,.11);
+      background:rgba(6,16,27,.78);backdrop-filter:blur(18px);box-shadow:0 18px 50px rgba(0,0,0,.34)
+    }
+    .mobile-cta-inner{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+    .mobile-cta a{min-height:46px;border-radius:12px;display:grid;place-items:center;font-size:13px;font-weight:850}
+    .mobile-cta .wa{background:linear-gradient(135deg,var(--green),#43d78f);color:#06101b}
+    .mobile-cta .tg{border:1px solid var(--line);background:rgba(255,255,255,.04)}
+
     .reveal{opacity:0;transform:translateY(18px);transition:opacity .65s ease,transform .65s ease}
     .reveal.show{opacity:1;transform:none}
-    @media(max-width:850px){
+
+    @media(max-width:900px){
       .hero-grid,.about,.projects{grid-template-columns:1fr}
-      .grid-3,.pricing{grid-template-columns:1fr}
+      .services{grid-template-columns:1fr}
       .nav-links a:not(.nav-cta){display:none}
-      .hero{padding-top:58px}
-      .section-head{display:block}
-      .section-head p{margin-top:10px}
-      .profile-card{margin-top:6px}
-      .mockup{min-height:240px}
+      .hero{padding-top:62px}
+      .section-head{display:block}.section-head p{margin-top:12px}
+      .profile-wrap{max-width:650px}
+      .stack{grid-template-columns:1fr;gap:8px}
+      .visual{min-height:270px}
     }
-    @media(max-width:520px){
+    @media(max-width:560px){
       .container{width:min(var(--max),calc(100% - 28px))}
-      .nav-inner{min-height:66px}
+      .nav-inner{min-height:68px}
       .nav-cta{font-size:12px}
-      .hero{padding:54px 0 52px}
-      h1{font-size:48px}
-      .lead{font-size:17px}
-      .btn{width:100%}
-      .cta{gap:10px}
-      section{padding:58px 0}
-      .contact{padding:32px 20px}
+      .hero{padding:52px 0 36px}
+      h1{font-size:49px;letter-spacing:-2.7px}
+      .lead{font-size:16.5px}
+      .hero-points{gap:8px}
+      .cta .btn{width:100%}
+      section{padding:60px 0}
+      .quick-stats{grid-template-columns:1fr 1fr}
+      .profile-card{padding:22px}
+      .profile-top{align-items:flex-start}
+      .avatar{width:72px;height:72px;border-radius:21px}
+      .visual{min-height:245px}
+      .device{width:174px}
+      .contact-shell{padding:40px 18px}
+      .contact-links .btn{width:100%}
+      .contact-meta{gap:10px}
       .footer-inner{display:block}
-      .footer-inner span{display:block;margin-top:6px}
+      .footer-inner span{display:block;margin-top:5px}
+      .mobile-cta{display:block}
+      footer{padding-bottom:100px}
     }
     @media(prefers-reduced-motion:reduce){
-      html{scroll-behavior:auto}
-      .reveal{opacity:1;transform:none;transition:none}
-      .btn,.card,.project{transition:none}
+      html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}
+      .btn,.project,.service-card{transition:none}
     }
   </style>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Person",
+    "name":"Muhammad Parvez",
+    "url":"https://xionhub.me/",
+    "sameAs":[
+      "https://github.com/parvez-devs",
+      "https://t.me/Px0x0o",
+      "https://www.instagram.com/xerox_hub/"
+    ],
+    "email":"mailto:admin@xionhub.me",
+    "jobTitle":"Web Developer"
+  }
+  </script>
 </head>
 <body>
+  <div class="progress" id="progress"></div>
+
   <nav class="nav">
     <div class="container nav-inner">
-      <a class="brand" href="#top"><span class="brand-mark">P</span> Parvez <span>Devs</span></a>
+      <a class="brand" href="#top" aria-label="Parvez Devs home">
+        <span class="brand-mark">P</span>
+        <span class="brand-name">Parvez <span>Devs</span></span>
+      </a>
       <div class="nav-links">
         <a href="#services">Services</a>
-        <a href="#projects">Projects</a>
-        <a href="#pricing">Pricing</a>
-        <a class="nav-cta" href="https://wa.me/8801936700142?text=Hi%20Parvez%2C%20I%20found%20you%20through%20xionhub.me%20and%20want%20to%20discuss%20a%20project." target="_blank" rel="noreferrer">Hire Me</a>
+        <a href="#projects">Work</a>
+        <a href="#about">About</a>
+        <a class="nav-cta" href="https://wa.me/8801936700142?text=Hi%20Parvez%2C%20I%20found%20you%20through%20xionhub.me%20and%20want%20to%20discuss%20a%20project." target="_blank" rel="noreferrer">Start a project</a>
       </div>
     </div>
   </nav>
@@ -236,48 +366,102 @@
     <header class="hero">
       <div class="container hero-grid">
         <div class="reveal">
-          <div class="eyebrow"><span class="dot"></span> Available for freelance projects</div>
-          <h1>I build fast, modern <span class="gradient">web experiences</span>.</h1>
+          <div class="eyebrow"><span class="dot"></span> Available for selected freelance work</div>
+          <h1>Building polished digital products that <span class="gradient">feel professional.</span></h1>
           <p class="lead">
-            I’m Muhammad Parvez, a web developer focused on responsive websites, frontend bug fixing,
-            Telegram bot workflows, and Supabase-powered web apps. I help turn ideas and broken interfaces
-            into clean, functional products.
+            I’m Muhammad Parvez, a web developer focused on responsive frontend experiences,
+            Telegram automations and Supabase-powered applications. I turn rough ideas,
+            broken interfaces and manual workflows into cleaner, faster products.
           </p>
+          <div class="hero-points">
+            <span class="pill"><i></i> Responsive Web UI</span>
+            <span class="pill"><i></i> JavaScript / Vite</span>
+            <span class="pill"><i></i> Supabase Integration</span>
+            <span class="pill"><i></i> Telegram Automation</span>
+          </div>
           <div class="cta">
-            <a class="btn primary" href="mailto:admin@xionhub.me?subject=Project%20Inquiry%20from%20xionhub.me">Start a Project ↗</a>
-            <a class="btn secondary" href="#projects">View My Work</a>
+            <a class="btn primary" href="https://wa.me/8801936700142?text=Hi%20Parvez%2C%20I%20found%20you%20through%20xionhub.me%20and%20want%20to%20discuss%20a%20project." target="_blank" rel="noreferrer">Start a Project <span class="arrow">↗</span></a>
+            <a class="btn secondary" href="#projects">Explore My Work</a>
           </div>
         </div>
 
-        <aside class="profile-card reveal">
-          <div class="profile-top">
-            <img class="avatar" src="https://avatars.githubusercontent.com/u/327871675?v=4" alt="Muhammad Parvez" />
-            <div>
-              <h2>Muhammad Parvez</h2>
-              <p>@parvez-devs · Web Developer</p>
+        <div class="profile-wrap reveal">
+          <div class="glow"></div>
+          <aside class="profile-card">
+            <div class="profile-top">
+              <img class="avatar" src="https://avatars.githubusercontent.com/u/327871675?v=4" alt="Muhammad Parvez" />
+              <div>
+                <h2>Muhammad Parvez</h2>
+                <p>@parvez-devs · Web Developer</p>
+                <div class="availability"><span></span> Open for project inquiries</div>
+              </div>
             </div>
-          </div>
-          <div class="quick-stats">
-            <div class="stat"><b>Responsive UI</b><span>Mobile-first builds</span></div>
-            <div class="stat"><b>Automation</b><span>Telegram workflows</span></div>
-            <div class="stat"><b>Backend</b><span>Supabase integration</span></div>
-            <div class="stat"><b>Deployment</b><span>GitHub & Railway</span></div>
-          </div>
-          <p class="profile-note">Open to small business websites, landing pages, bug fixes, automation and web-app integration work.</p>
-        </aside>
+            <div class="quick-stats">
+              <div class="stat"><b>Frontend</b><span>Responsive & mobile-first</span></div>
+              <div class="stat"><b>Automation</b><span>Telegram workflows</span></div>
+              <div class="stat"><b>Backend</b><span>Supabase integrations</span></div>
+              <div class="stat"><b>Deployment</b><span>GitHub & Railway</span></div>
+            </div>
+            <div class="social-row">
+              <a class="social" href="https://github.com/parvez-devs" target="_blank" rel="noreferrer">GitHub ↗</a>
+              <a class="social" href="https://t.me/Px0x0o" target="_blank" rel="noreferrer">Telegram ↗</a>
+              <a class="social" href="https://www.instagram.com/xerox_hub/" target="_blank" rel="noreferrer">Instagram ↗</a>
+            </div>
+          </aside>
+        </div>
       </div>
     </header>
+
+    <div class="stack-strip">
+      <div class="container">
+        <div class="stack reveal">
+          <div class="stack-label">Core stack</div>
+          <div class="stack-items">
+            <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Vite</span>
+            <span>Node.js</span><span>Supabase</span><span>Telegram Bot API</span>
+            <span>GitHub</span><span>Railway</span>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <section id="services">
       <div class="container">
         <div class="section-head reveal">
-          <div><div class="mini-title">Services</div><h2>Focused solutions for real problems</h2></div>
-          <p>Hire me for a single issue or a complete small web project. I focus on practical delivery, mobile usability and clean implementation.</p>
+          <div>
+            <div class="mini-title">Capabilities</div>
+            <h2>Focused work that improves the product.</h2>
+          </div>
+          <p>I work best on clear, practical problems: fixing interfaces, building responsive pages, connecting systems and reducing manual work.</p>
         </div>
-        <div class="grid-3">
-          <article class="card reveal"><div class="icon">⚡</div><h3>Website Bug Fixing</h3><p>Broken layouts, mobile responsiveness, UI issues, HTML/CSS/JavaScript fixes and frontend cleanup.</p></article>
-          <article class="card reveal"><div class="icon">🧩</div><h3>Landing Pages</h3><p>Fast, responsive service or product pages with clear calls to action and a polished mobile experience.</p></article>
-          <article class="card reveal"><div class="icon">🤖</div><h3>Telegram Automation</h3><p>Bot commands, notifications, approval flows, webhooks and website-to-Telegram workflows.</p></article>
+
+        <div class="services">
+          <article class="service-card reveal">
+            <div>
+              <div class="icon">⚡</div>
+              <h3>Frontend & UI Engineering</h3>
+              <p>Responsive layouts, mobile polish, visual cleanup, interaction fixes and frontend implementation with a product-first approach.</p>
+            </div>
+            <div class="service-foot"><span>Best for</span><b>Websites & web apps</b></div>
+          </article>
+
+          <article class="service-card reveal">
+            <div>
+              <div class="icon">◫</div>
+              <h3>Landing Pages & Product Pages</h3>
+              <p>Clean single-page experiences with strong hierarchy, clear calls to action and consistent performance across screen sizes.</p>
+            </div>
+            <div class="service-foot"><span>Best for</span><b>Business & product launches</b></div>
+          </article>
+
+          <article class="service-card reveal">
+            <div>
+              <div class="icon">⌁</div>
+              <h3>Automation & Integration</h3>
+              <p>Telegram bot workflows, notifications, approval flows, webhooks and Supabase integrations that connect your product to real operations.</p>
+            </div>
+            <div class="service-foot"><span>Best for</span><b>Manual workflow reduction</b></div>
+          </article>
         </div>
       </div>
     </section>
@@ -285,116 +469,120 @@
     <section id="projects">
       <div class="container">
         <div class="section-head reveal">
-          <div><div class="mini-title">Selected Work</div><h2>Projects I’m building</h2></div>
-          <p>Real development work shown honestly. These projects are in active development, so I don’t label unfinished features as completed.</p>
+          <div>
+            <div class="mini-title">Selected work</div>
+            <h2>Real projects, shown without fake claims.</h2>
+          </div>
+          <p>These are projects and prototypes I’m actively developing. Unfinished functionality is clearly labeled instead of being presented as completed client work.</p>
         </div>
 
         <div class="projects">
           <article class="project reveal">
-            <div class="mockup" aria-label="PlayLuduHub UI preview">
-              <div class="phone">
-                <div class="screen">
-                  <div class="screen-top"></div>
+            <div class="visual">
+              <div class="device" aria-label="PlayLuduHub interface preview">
+                <div class="device-screen">
+                  <div class="device-top"></div>
                   <div class="board"></div>
-                  <div class="screen-foot"></div>
+                  <div class="device-foot"></div>
                 </div>
               </div>
             </div>
             <div class="project-body">
-              <span class="status">In Development · UI Preview</span>
+              <span class="status">ACTIVE DEVELOPMENT · UI PREVIEW</span>
               <h3>PlayLuduHub</h3>
-              <p>A mobile-first HTML5 Ludo platform covering game UI, matchmaking concepts, player state, admin workflows and backend integration.</p>
-              <div class="tags"><span class="tag">HTML5</span><span class="tag">JavaScript</span><span class="tag">Vite</span><span class="tag">Supabase</span></div>
-              <div class="project-links"><a href="https://github.com/parvez-devs/playluduhub" target="_blank" rel="noreferrer">View repository ↗</a></div>
+              <p>A mobile-first HTML5 Ludo platform exploring game UI, matchmaking, player state, admin workflows and backend integration.</p>
+              <div class="tags">
+                <span class="tag">HTML5</span><span class="tag">JavaScript</span><span class="tag">Vite</span><span class="tag">Supabase</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/parvez-devs/playluduhub" target="_blank" rel="noreferrer">View repository ↗</a>
+              </div>
             </div>
           </article>
 
           <article class="project reveal">
-            <div class="mockup" aria-label="Telegram approval workflow UI preview">
-              <div class="bot-ui">
+            <div class="visual">
+              <div class="bot-panel" aria-label="Telegram approval workflow preview">
                 <div class="bot-head">Telegram Approval Workflow</div>
-                <div class="msg"><b>New request</b><br>Website event → Telegram → Admin decision → App update</div>
-                <div class="bot-actions"><div class="action ok">Approve</div><div class="action no">Reject</div></div>
+                <div class="msg">
+                  <b>New website request</b><br>
+                  Website event → Telegram notification → Admin action → Application update
+                </div>
+                <div class="bot-actions">
+                  <div class="action ok">Approve</div>
+                  <div class="action no">Reject</div>
+                </div>
               </div>
             </div>
             <div class="project-body">
-              <span class="status">Prototype / Integration Work · UI Preview</span>
+              <span class="status">PROTOTYPE · UI PREVIEW</span>
               <h3>Telegram Bot Automation</h3>
-              <p>A workflow for receiving website requests in Telegram, presenting admin actions, and connecting decisions back to the application.</p>
-              <div class="tags"><span class="tag">Telegram Bot API</span><span class="tag">Node.js</span><span class="tag">Webhooks</span><span class="tag">Supabase</span></div>
+              <p>A workflow concept for receiving website events in Telegram, presenting admin actions and sending the decision back to the application.</p>
+              <div class="tags">
+                <span class="tag">Telegram Bot API</span><span class="tag">Node.js</span><span class="tag">Webhooks</span><span class="tag">Supabase</span>
+              </div>
             </div>
           </article>
         </div>
-      </div>
-    </section>
-
-    <section id="pricing">
-      <div class="container">
-        <div class="section-head reveal">
-          <div><div class="mini-title">Starter Pricing</div><h2>Simple prices for small jobs</h2></div>
-          <p>These are introductory starting prices. Final quotes depend on scope, complexity and turnaround time.</p>
-        </div>
-        <div class="pricing">
-          <article class="card price-card reveal">
-            <div class="mini-title">Quick Fix</div>
-            <div class="price">৳800 <small>starting</small></div>
-            <h3>Website Bug Fix</h3>
-            <ul class="price-list"><li>Small layout/UI issue</li><li>Mobile responsiveness fix</li><li>Basic HTML/CSS/JS debugging</li></ul>
-          </article>
-          <article class="card price-card reveal">
-            <div class="mini-title">Build</div>
-            <div class="price">৳2,500 <small>starting</small></div>
-            <h3>Landing Page</h3>
-            <ul class="price-list"><li>Responsive single page</li><li>Modern sections & CTA</li><li>Basic deployment help</li></ul>
-          </article>
-          <article class="card price-card reveal">
-            <div class="mini-title">Automation</div>
-            <div class="price">৳3,000 <small>starting</small></div>
-            <h3>Telegram Bot Setup</h3>
-            <ul class="price-list"><li>Basic bot workflow</li><li>Notifications/actions</li><li>Website/API integration scope</li></ul>
-          </article>
-        </div>
-        <p class="price-note reveal">Need something larger? Send the project details and I’ll provide a custom quote before work begins.</p>
       </div>
     </section>
 
     <section id="about">
       <div class="container about">
         <div class="about-box reveal">
-          <div class="mini-title">About Me</div>
-          <h2>Practical development, clear communication.</h2>
-          <p>I focus on frontend development, responsive design, web app integrations and automation. I like taking an existing idea or broken interface and making it cleaner, faster and easier to use.</p>
-          <div class="skills"><span class="skill">HTML</span><span class="skill">CSS</span><span class="skill">JavaScript</span><span class="skill">Vite</span><span class="skill">Node.js</span><span class="skill">Supabase</span><span class="skill">Telegram Bot API</span><span class="skill">GitHub</span><span class="skill">Railway</span></div>
+          <div class="mini-title">How I work</div>
+          <h2>Clear scope. Clean build. Tested delivery.</h2>
+          <p>
+            I prefer practical development over unnecessary complexity. The goal is to understand the actual problem,
+            build the smallest reliable solution, test the important flows and leave the project easier to maintain.
+          </p>
+          <div class="skills">
+            <span class="skill">Responsive Design</span><span class="skill">Frontend Debugging</span>
+            <span class="skill">Web App Integration</span><span class="skill">Automation</span>
+            <span class="skill">Mobile-first UI</span><span class="skill">Deployment</span>
+          </div>
         </div>
+
         <div class="process reveal">
-          <div class="step"><div class="num">01</div><div><h4>Understand the problem</h4><p>I identify what needs fixing or what outcome the project needs.</p></div></div>
-          <div class="step"><div class="num">02</div><div><h4>Build the solution</h4><p>I focus on responsive behavior, practical implementation and maintainable code.</p></div></div>
-          <div class="step"><div class="num">03</div><div><h4>Test before delivery</h4><p>I check key flows and the mobile experience before handoff.</p></div></div>
+          <div class="step">
+            <div class="num">01</div>
+            <div><h4>Scope the problem</h4><p>Define what is broken, what needs to be built and what success should look like.</p></div>
+          </div>
+          <div class="step">
+            <div class="num">02</div>
+            <div><h4>Build the right layer</h4><p>Implement responsive UI, frontend logic, integrations or automation based on the project need.</p></div>
+          </div>
+          <div class="step">
+            <div class="num">03</div>
+            <div><h4>Test the important flows</h4><p>Check mobile behavior, user paths and core functionality before handoff.</p></div>
+          </div>
+          <div class="step">
+            <div class="num">04</div>
+            <div><h4>Deliver with clarity</h4><p>Keep the project structure understandable so future changes are easier to make.</p></div>
+          </div>
         </div>
       </div>
     </section>
 
     <section id="contact">
       <div class="container">
-        <div class="contact reveal">
-          <div class="mini-title">Let’s Work Together</div>
-          <h2>Have a website problem or project idea?</h2>
-          <p>Send me your website link, the problem you want fixed, or a short description of what you want built. I’ll reply with the next step.</p>
-          <div class="cta" style="justify-content:center">
-            <a class="btn primary" href="https://wa.me/8801936700142?text=Hi%20Parvez%2C%20I%20found%20you%20through%20xionhub.me%20and%20want%20to%20discuss%20a%20project." target="_blank" rel="noreferrer">WhatsApp Me ↗</a>
+        <div class="contact-shell reveal">
+          <div class="mini-title">Start a conversation</div>
+          <h2>Have a project that needs to look and work better?</h2>
+          <p>Send the website link, what you want fixed or built, and any deadline you have. I’ll respond with the clearest next step.</p>
+
+          <div class="contact-links">
+            <a class="btn primary" href="https://wa.me/8801936700142?text=Hi%20Parvez%2C%20I%20found%20you%20through%20xionhub.me%20and%20want%20to%20discuss%20a%20project." target="_blank" rel="noreferrer">WhatsApp <span class="arrow">↗</span></a>
             <a class="btn secondary" href="https://t.me/Px0x0o" target="_blank" rel="noreferrer">Telegram</a>
-            <a class="btn secondary" href="https://www.instagram.com/xerox_hub/" target="_blank" rel="noreferrer">Instagram</a>
             <a class="btn secondary" href="mailto:admin@xionhub.me?subject=Project%20Inquiry%20from%20xionhub.me">Email</a>
-            <a class="btn secondary" href="https://github.com/parvez-devs" target="_blank" rel="noreferrer">GitHub</a>
           </div>
-          <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:14px;color:var(--muted);font-size:13px">
-            <a href="https://wa.me/8801936700142" target="_blank" rel="noreferrer">WhatsApp: 01936700142</a>
-            <span>•</span>
-            <a href="https://t.me/Px0x0o" target="_blank" rel="noreferrer">Telegram: @Px0x0o</a>
-            <span>•</span>
-            <a href="https://www.instagram.com/xerox_hub/" target="_blank" rel="noreferrer">Instagram: @xerox_hub</a>
+
+          <div class="contact-meta">
+            <a href="https://wa.me/8801936700142" target="_blank" rel="noreferrer">01936700142</a>
+            <a href="https://t.me/Px0x0o" target="_blank" rel="noreferrer">@Px0x0o</a>
+            <a href="https://www.instagram.com/xerox_hub/" target="_blank" rel="noreferrer">@xerox_hub</a>
+            <a href="mailto:admin@xionhub.me">admin@xionhub.me</a>
           </div>
-          <a class="contact-mail" href="mailto:admin@xionhub.me">admin@xionhub.me</a>
         </div>
       </div>
     </section>
@@ -407,21 +595,37 @@
     </div>
   </footer>
 
+  <div class="mobile-cta" aria-label="Quick contact">
+    <div class="mobile-cta-inner">
+      <a class="wa" href="https://wa.me/8801936700142?text=Hi%20Parvez%2C%20I%20found%20you%20through%20xionhub.me%20and%20want%20to%20discuss%20a%20project." target="_blank" rel="noreferrer">WhatsApp</a>
+      <a class="tg" href="https://t.me/Px0x0o" target="_blank" rel="noreferrer">Telegram</a>
+    </div>
+  </div>
+
   <script>
-    const items = document.querySelectorAll('.reveal');
+    const revealItems = document.querySelectorAll('.reveal');
     if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      const io = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add('show');
-            io.unobserve(entry.target);
+            observer.unobserve(entry.target);
           }
         });
       }, { threshold: 0.12 });
-      items.forEach(el => io.observe(el));
+      revealItems.forEach((el) => observer.observe(el));
     } else {
-      items.forEach(el => el.classList.add('show'));
+      revealItems.forEach((el) => el.classList.add('show'));
     }
+
+    const progress = document.getElementById('progress');
+    const updateProgress = () => {
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      const value = max > 0 ? (window.scrollY / max) * 100 : 0;
+      progress.style.width = value + '%';
+    };
+    updateProgress();
+    window.addEventListener('scroll', updateProgress, { passive: true });
   </script>
 </body>
 </html>
